@@ -16,28 +16,51 @@
         
         <div class="container">
           <!--Django Model Form-->
-          <h2 class="my-4">Add a new Zalypa</h2>
-          <form method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-              {{ internal_form|crispy }}
+          <h2 class="my-4">Add a new item</h2>
+            <form method="post" action="/valuate/">
+                {% csrf_token %}
+                <table >
+                    <tr>
+                        <th> Name </th>
+                        <td><input type="text" name="name" /></td>
+                    </tr>
+                    <tr>
+                        <th> Destination </th>
+                        <td><input type="text" name="destination"/></td>
+                    </tr>
+                    <tr>
+                        <th> Net A Payer </th>
+                        <td><input type="text" name="net_a_payer"/></td>
+                    </tr>
+                    <tr>
+                        <th> Quantity </th>
+                        <td><input type="text" name="quantity"/></td>
+                    </tr>
+                    <tr>
+                        <th> Percent </th>
+                        <td><input type="text" name="percent"/></td>
+                    </tr>
+                    <tr>
+                        <th> Quantity after percent </th>
+                        <td><input type="text" name="quantity_after_percent"/></td>
+                    </tr>
+                    <tr>
+                        <th> Total payment </th>
+                        <td><input type="text" name="total_payment"/></td>
+                    </tr>
+                    <tr>
+                        <th> Total tax </th>
+                        <td><input type="text" name="total_tax"/></td>
+                    </tr>
+                    <tr>
+                        <th> Total payment after tax </th>
+                        <td><input type="text" name="total_payment_after_tax"/></td>
+                    </tr>
+                </table>
                 <button class="btn btn-primary my-4" type="submit">Submit</button>
-          </form>
-          <!--Django Model-->
-          <h2 class="my-4">Movies</h2>
-          <div class="row">
-            {% for internal in internals %}
-            <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
-              <div class="card h-100 p-4">
-                <h4>{{internal.created_date}}</h4>
-                <p class="text-muted">{{internal.advance_payment}}</p>
-                <p>{{internal.name}}</p>
-              </div>
-            </div>
-            {% empty %}
-            <p>No movies added.</p>
-            {% endfor %}
-          </div>
+            </form>
         </div>
+
     
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
