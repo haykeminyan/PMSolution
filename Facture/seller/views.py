@@ -34,8 +34,8 @@ class InternalList(APIView):
         serializer = InternalSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-            # return render(request, template_name='index.html')
+            # return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return render(request, template_name='valuate.html')
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -66,27 +66,32 @@ class InternalDetail(APIView):
 
 
 def index(request):
+    return render(request, template_name='index.html')
+
+
+logger.info('!!!')
+
+
+def valuate(request):
     if request.method == 'POST':
         internal_form = InternalForm(request.POST)
         name = request.POST['name']
         destination = request.POST['destination']
         net_a_payer = request.POST['net_a_payer']
-        quantity = request.POST['quantity']
-        percent = request.POST['percent']
+        quantity = int(request.POST['quantity'])
+        percent = int(request.POST['percent'])
         quantity_after_percent = request.POST['quantity_after_percent']
         total_payment = request.POST['total_payment']
         total_tax = request.POST['total_tax']
         total_payment_after_tax = request.POST['total_payment_after_tax']
         if internal_form.is_valid():
-            new_item = Internal.objects.create(name=name, destination=destination, net_a_payer=net_a_payer,
-                                               quantity=quantity, percent=percent,
-                                               quantity_after_percent=quantity_after_percent,
-                                               total_payment=total_payment, total_tax=total_tax,
-                                               total_payment_after_tax=total_payment_after_tax)
-
+            new_item = Internal(name=name, destination=destination, net_a_payer=net_a_payer,
+                                quantity=quantity, percent=percent,
+                                quantity_after_percent=quantity_after_percent,
+                                total_payment=total_payment, total_tax=total_tax,
+                                total_payment_after_tax=total_payment_after_tax)
             new_item.save()
-            return render(request, template_name='home.html', context={'new_item': new_item})
+            form = {'new_item': new_item, 'name': name,'destination': destination, 'net_a_payer':net_a_payer}
         else:
-            messages.error(request, 'error')
-
-    return render(request, template_name='home.html')
+            form = InternalForm()
+        return render(request, template_name='valuate.html', context={'form': form})

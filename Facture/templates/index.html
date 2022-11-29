@@ -17,7 +17,7 @@
         <div class="container">
           <!--Django Model Form-->
           <h2 class="my-4">Add a new item</h2>
-            <form method="post" action="/valuate/">
+            <form method="post" action="valuate">
                 {% csrf_token %}
                 <table >
                     <tr>
@@ -57,7 +57,8 @@
                         <td><input type="text" name="total_payment_after_tax"/></td>
                     </tr>
                 </table>
-                <button class="btn btn-primary my-4" type="submit">Submit</button>
+{#                <button class="btn btn-primary my-4" type="submit">Submit</button>#}
+                <input type="submit" value="Submit">
             </form>
         </div>
 

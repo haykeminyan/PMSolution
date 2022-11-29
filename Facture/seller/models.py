@@ -7,7 +7,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator, RegexVa
 
 class Internal(models.Model):
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=30, default='Ayk')
+    name = models.CharField(max_length=30)
     created_date = models.DateField(auto_now_add=True)
     updated_date = models.DateField(auto_now=True)
     reference = models.CharField(max_length=10, blank=True)
