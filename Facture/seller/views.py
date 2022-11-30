@@ -2,6 +2,7 @@ from io import BytesIO
 
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
+from excel_response import ExcelResponse
 from openpyxl import Workbook
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -74,7 +75,7 @@ logger.info('!!!')
 
 def valuate(request):
     if request.method == 'POST':
-        internal_form = InternalForm(request.POST)
+        # internal_form = InternalForm(request.POST)
         name = request.POST['name']
         destination = request.POST['destination']
         net_a_payer = request.POST['net_a_payer']
@@ -84,14 +85,16 @@ def valuate(request):
         total_payment = request.POST['total_payment']
         total_tax = request.POST['total_tax']
         total_payment_after_tax = request.POST['total_payment_after_tax']
-        if internal_form.is_valid():
-            new_item = Internal(name=name, destination=destination, net_a_payer=net_a_payer,
-                                quantity=quantity, percent=percent,
-                                quantity_after_percent=quantity_after_percent,
-                                total_payment=total_payment, total_tax=total_tax,
-                                total_payment_after_tax=total_payment_after_tax)
-            new_item.save()
-            form = {'new_item': new_item, 'name': name,'destination': destination, 'net_a_payer':net_a_payer}
-        else:
-            form = InternalForm()
-        return render(request, template_name='valuate.html', context={'form': form})
+        # if internal_form.is_valid():
+        new_item = Internal(name=name, destination=destination, net_a_payer=net_a_payer,
+                            quantity=quantity, percent=percent,
+                            quantity_after_percent=quantity_after_percent,
+                            total_payment=total_payment, total_tax=total_tax,
+                            total_payment_after_tax=total_payment_after_tax)
+        new_item.save()
+        form = [{ 'name': name, 'destination': destination, 'net_a_payer': net_a_payer,
+                'quantity': quantity, 'percent': percent, 'quantity_after_percent': quantity_after_percent,
+                'total_payment': total_payment, 'total_tax': total_tax,
+                'total_payment_after_tax': total_payment_after_tax}]
+
+        return ExcelResponse(data=form, output_filename=f'Facture {new_item.created_date}')

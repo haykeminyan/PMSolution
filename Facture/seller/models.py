@@ -1,3 +1,4 @@
+from django.core.exceptions import BadRequest, ValidationError
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator, RegexValidator
 
@@ -17,18 +18,29 @@ class Internal(models.Model):
         ),
     ], default='RECHARGE EXPRESS 1234')
     quantity = models.IntegerField(help_text='Armencho mihat gri sti', validators=[MinValueValidator(1.0)], blank=True,
-                                   null=True, default=12)
-    percent = models.FloatField(validators=[MinValueValidator(1.0), MaxValueValidator(10.0)], blank=True, null=True, default=3)
-    quantity_after_percent = models.FloatField(blank=True, null=True, default=3)
-    net_a_payer = models.FloatField(default=123)
-    advance_payment = models.CharField(max_length=10, blank=True, default=4)
-    total_payment = models.FloatField(default=34)
-    total_tax = models.FloatField(default=1)
-    total_payment_after_tax = models.FloatField(default=3)
+                                   null=True)
+    percent = models.FloatField(validators=[MinValueValidator(1.0), MaxValueValidator(10.0)], blank=True, null=True)
+    quantity_after_percent = models.FloatField(blank=True, null=True)
+    net_a_payer = models.FloatField()
+    advance_payment = models.CharField(max_length=10, blank=True)
+    total_payment = models.FloatField(blank=True, null=True)
+    total_tax = models.FloatField(blank=True, null=True)
+    total_payment_after_tax = models.FloatField(blank=True, null=True)
 
     def __str__(self) -> str:
         """Return model string representation."""
         return f'{self.created_date} {self.name}'
+
+    def clean(self):
+        super().clean()
+        if not self.quantity and not self.percent and not self.quantity_after_percent:
+            raise ValidationError('Quantity and Percent and Quantity after percent are missing')
+        if not self.quantity and not self.percent:
+            raise ValidationError('Quantity and Percent are missing')
+        elif not self.quantity and not self.quantity_after_percent:
+            raise ValidationError('Quantity and Quantity after percent are missing')
+        elif not self.percent and not self.quantity_after_percent:
+            raise ValidationError('Percent and Quantity after percent are missing')
 
     def save(self, *args, **kwargs):
         if not self.quantity_after_percent:
