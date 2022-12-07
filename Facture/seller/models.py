@@ -34,13 +34,13 @@ class Internal(models.Model):
     def clean(self):
         super().clean()
         if not self.quantity and not self.percent and not self.quantity_after_percent:
-            raise ValidationError('Quantity and Percent and Quantity after percent are missing')
+            raise ValidationError('Quantity, Percent, Quantity after percent are missing')
         if not self.quantity and not self.percent:
-            raise ValidationError('Quantity and Percent are missing')
+            raise ValidationError('Quantity, Percent are missing')
         elif not self.quantity and not self.quantity_after_percent:
-            raise ValidationError('Quantity and Quantity after percent are missing')
+            raise ValidationError('Quantity, Quantity after percent are missing')
         elif not self.percent and not self.quantity_after_percent:
-            raise ValidationError('Percent and Quantity after percent are missing')
+            raise ValidationError('Percent, Quantity after percent are missing')
 
     def save(self, *args, **kwargs):
         if not self.quantity_after_percent:
@@ -50,3 +50,4 @@ class Internal(models.Model):
         if not self.percent:
             self.percent = round(self.quantity_after_percent / self.quantity, 2)
         super(Internal, self).save()
+

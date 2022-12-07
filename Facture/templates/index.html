@@ -1,70 +1,85 @@
-{% load crispy_forms_filters %}
+{% load static %}
+{% load crispy_forms_tags %}
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <!DOCTYPE html>
 <html>
   <head>
        <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="{% static 'index.css' %}">
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
     <title>Django ModelForms</title>
     </head>
     <body>
-      {% load crispy_forms_tags %}
-        
         <div class="container">
           <!--Django Model Form-->
           <h2 class="my-4">Add a new item</h2>
-            <form method="post" action="valuate">
+            <form name='model' method="post" action="valuate" >
                 {% csrf_token %}
                 <table >
                     <tr>
-                        <th> Name </th>
-                        <td><input type="text" name="name" required/></td>
+                        <th > {% include 'static/1-circle-fill.svg' %} Name </th>
+                        <td><input type="text" name="name" /></td>
                     </tr>
                     <tr>
-                        <th> Destination </th>
+                        <th>{% include 'static/2-circle-fill.svg' %} Destination </th>
                         <td><input type="text" name="destination"/></td>
                     </tr>
                     <tr>
-                        <th> Net A Payer </th>
+                        <th>{% include 'static/3-circle-fill.svg' %} Net A Payer </th>
                         <td><input type="text" name="net_a_payer"/></td>
                     </tr>
                     <tr>
-                        <th> Quantity </th>
-                        <td><input type="text" name="quantity" required/></td>
+                        <th> {% include 'static/4-circle-fill.svg' %} Quantity </th>
+                        <td><input type="text" name="quantity"/></td>
                     </tr>
                     <tr>
-                        <th> Percent </th>
+                        <th> {% include 'static/5-circle-fill.svg' %} Percent </th>
                         <td><input type="text" name="percent"/></td>
                     </tr>
                     <tr>
-                        <th> Quantity after percent </th>
+                        <th>{% include 'static/6-circle-fill.svg' %} Quantity after percent </th>
                         <td><input type="text" name="quantity_after_percent"/></td>
                     </tr>
                     <tr>
-                        <th> Total payment </th>
+                        <th> {% include 'static/7-circle-fill.svg' %}Total payment </th>
                         <td><input type="text" name="total_payment"/></td>
                     </tr>
                     <tr>
-                        <th> Total tax </th>
+                        <th> {% include 'static/8-circle-fill.svg' %} Total tax </th>
                         <td><input type="text" name="total_tax"/></td>
                     </tr>
                     <tr>
-                        <th> Total payment after tax </th>
+                        <th> {% include 'static/9-circle-fill.svg' %} Total payment after tax </th>
                         <td><input type="text" name="total_payment_after_tax"/></td>
                     </tr>
                 </table>
-{#                <button class="btn btn-primary my-4" type="submit">Submit</button>#}
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" onclick="validateAndSend()">
             </form>
+    <script>
+        function validateAndSend() {
+            if (model.quantity.value === '' && model.percent.value === '') {
+                alert('Quantity and Percent are missing. Idi v jopy');
+                return false;
+            } else if (model.quantity.value === '' && model.quantity_after_percent.value === '') {
+                alert('Quantity and Quantity_after_percent are missing. Idi v jopy');
+                return false;
+            } else if (model.percent.value === '' && model.quantity_after_percent.value === '') {
+                alert('Percent and Quantity_after_percent are missing. Idi v jopy');
+                return false;
+            }
+            else {
+                myForm.submit();
+            }
+        }
+    </script>
         </div>
-
-    
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<footer id="footer">
+    <p class="col-md-4 mb-0 text-muted">&copy; 2022 Company, Inc</p>
+</footer>
     </body>
+
 </html>
