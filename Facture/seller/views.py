@@ -1,100 +1,79 @@
-from io import BytesIO
-
-from django.contrib import messages
-from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView
+from django.views.generic.edit import FormView, CreateView
 from excel_response import ExcelResponse
-from openpyxl import Workbook
-from django.http import JsonResponse, HttpResponse
-from django.views.decorators.csrf import csrf_exempt
-from openpyxl.styles import Alignment, Font
-from rest_framework.exceptions import NotFound
-from rest_framework.parsers import JSONParser
 import logging
-from rest_framework import viewsets, status
-from rest_framework.response import Response
-from rest_framework.views import APIView
-
-from seller.forms import InternalForm
-from seller.serializer import InternalSerializer
 from seller.models import Internal
 
 logger = logging.getLogger(__name__)
 
 
-class InternalList(APIView):
-    """
-    List all snippets, or create a new snippet.
-    """
+class InternalCreateData(CreateView):
+    model = Internal
+    template_name = 'create_data.html'
+    fields = ['id', 'name',
+              'reference', 'destination', 'quantity', 'percent', 'quantity_after_percent',
+              'net_a_payer', 'advance_payment', 'total_payment', 'total_tax',
+              'total_payment_after_tax']
 
-    def get(self, request, format=None):
-        snippets = Internal.objects.all()
-        serializer = InternalSerializer(snippets, many=True)
-        return Response(serializer.data)
-
-    def post(self, request):
-        serializer = InternalSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            # return Response(serializer.data, status=status.HTTP_201_CREATED)
-            return render(request, template_name='valuate.html')
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    def get_success_url(self):
+        return reverse('seller:detail', kwargs={'pk': self.object.pk})
 
 
-class InternalDetail(APIView):
-    def get_object(self, pk):
-        try:
-            return Internal.objects.get(pk=pk)
-        except Internal.DoesNotExist:
-            raise NotFound()
-
-    def get(self, request, pk, format=None):
-        internal = self.get_object(pk)
-        serializer = InternalSerializer(internal)
-        return Response(serializer.data)
-
-    def put(self, request, pk, format=None):
-        internal = self.get_object(pk)
-        serializer = InternalSerializer(internal, data=request.data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-    def delete(self, request, pk, format=None):
-        internal = self.get_object(pk)
-        internal.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+class InternalAllData(ListView):
+    model = Internal
+    template_name = 'all_data.html'
 
 
-def index(request):
-    return render(request, template_name='index.html')
+class InternalDetailView(DetailView):
+    model = Internal
+    template_name = 'detail.html'
 
 
-logger.info('!!!')
+class InternalDetailUpdate(UpdateView):
+    model = Internal
+    template_name = 'update.html'
+    fields = ['id', 'name',
+              'reference', 'destination', 'quantity', 'percent', 'quantity_after_percent',
+              'net_a_payer', 'advance_payment', 'total_payment', 'total_tax',
+              'total_payment_after_tax']
+    success_url = "/"
 
 
-def valuate(request):
-    if request.method == 'POST':
-        # internal_form = InternalForm(request.POST)
-        name = request.POST['name']
-        destination = request.POST['destination']
-        net_a_payer = request.POST['net_a_payer']
-        quantity = int(request.POST['quantity'])
-        percent = int(request.POST['percent'])
-        quantity_after_percent = request.POST['quantity_after_percent']
-        total_payment = request.POST['total_payment']
-        total_tax = request.POST['total_tax']
-        total_payment_after_tax = request.POST['total_payment_after_tax']
-        # if internal_form.is_valid():
-        new_item = Internal(name=name, destination=destination, net_a_payer=net_a_payer,
-                            quantity=quantity, percent=percent,
-                            quantity_after_percent=quantity_after_percent,
-                            total_payment=total_payment, total_tax=total_tax,
-                            total_payment_after_tax=total_payment_after_tax)
-        new_item.save()
-        form = [{ 'name': name, 'destination': destination, 'net_a_payer': net_a_payer,
-                'quantity': quantity, 'percent': percent, 'quantity_after_percent': quantity_after_percent,
-                'total_payment': total_payment, 'total_tax': total_tax,
-                'total_payment_after_tax': total_payment_after_tax}]
+class InternalDetailDelete(DeleteView):
+    model = Internal
+    template_name = 'delete.html'
+    success_url = "/"
 
-        return ExcelResponse(data=form, output_filename=f'Facture {new_item.created_date}')
+
+#
+#     def valuate(self, request):
+#         if request.method == 'POST':
+#             # internal_form = InternalForm(request.POST)
+#             name = request.POST['name']
+#             destination = request.POST['destination']
+#             net_a_payer = request.POST['net_a_payer']
+#             quantity = int(request.POST['quantity'])
+#             percent = int(request.POST['percent'])
+#             quantity_after_percent = request.POST['quantity_after_percent']
+#             total_payment = request.POST['total_payment']
+#             total_tax = request.POST['total_tax']
+#             total_payment_after_tax = request.POST['total_payment_after_tax']
+#             # if internal_form.is_valid():
+#             new_item = Internal(name=name, destination=destination, net_a_payer=net_a_payer,
+#                                 quantity=quantity, percent=percent,
+#                                 quantity_after_percent=quantity_after_percent,
+#                                 total_payment=total_payment, total_tax=total_tax,
+#                                 total_payment_after_tax=total_payment_after_tax)
+#             new_item.save()
+#             form = [{'name': name, 'destination': destination, 'net_a_payer': net_a_payer,
+#                      'quantity': quantity, 'percent': percent, 'quantity_after_percent': quantity_after_percent,
+#                      'total_payment': total_payment, 'total_tax': total_tax,
+#                      'total_payment_after_tax': total_payment_after_tax}]
+#
+#             return ExcelResponse(data=form, output_filename=f'Facture {new_item.created_date}')
+#
+# logger.info('!!!')
+#
+#
+#
