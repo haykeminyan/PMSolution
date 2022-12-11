@@ -42,12 +42,12 @@ class Internal(models.Model):
         elif not self.percent and not self.quantity_after_percent:
             raise ValidationError('Percent, Quantity after percent are missing')
 
-    def save(self, *args, **kwargs):
-        if not self.quantity_after_percent:
-            self.quantity_after_percent = self.quantity * self.percent
-        if not self.quantity:
-            self.quantity = round(self.quantity_after_percent / self.percent, 2)
-        if not self.percent:
-            self.percent = round(self.quantity_after_percent / self.quantity, 2)
-        super(Internal, self).save()
+    # def save(self, *args, **kwargs):
+    #     if not self.quantity_after_percent:
+    #         self.quantity_after_percent = self.quantity * self.percent
+    #     if not self.quantity:
+    #         self.quantity = round(self.quantity_after_percent / self.percent, 2)
+    #     if not self.percent:
+    #         self.percent = round(self.quantity_after_percent / self.quantity, 2)
+    #     super(Internal, self).save()
 

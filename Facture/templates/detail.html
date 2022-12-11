@@ -1,5 +1,5 @@
 <li> <b>Id</b>: {{ object.id }} </li>
-<li> <b>Name</b>: {{ object.name }} </li>
+<li> <b>Name</b> <span id="name">{{ object.name }}</span> </li>
 <li> <b>Total_tax</b>: {{ object.total_tax }} </li>
 <li> <b>Percent</b>: {{ object.percent }} </li>
 <li> <b>Advance payment</b>: {{ object.advance_payment }} </li>
@@ -12,3 +12,10 @@
 <li> <b>Total payment</b>: {{ object.total_payment }} </li>
 <li> <b>Total payment after tax</b>: {{ object.total_payment_after_tax }} </li>
 <li> <b>Updated time</b>: {{ object.updated_date }} </li>
+    <script>console.log(document.referrer.includes('update'))
+        if(document.referrer.includes('update')) {
+        name = document.getElementById('name').innerHTML;
+        console.log(name)
+        alert(name.toUpperCase() + " have been edited ");
+    }
+        </script>

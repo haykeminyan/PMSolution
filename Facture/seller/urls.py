@@ -6,8 +6,8 @@ app_name = "seller"
 
 urlpatterns = [
     path('', views.InternalCreateData.as_view(), name='create'),
-    path('all_data', views.InternalAllData.as_view(), name='all_data'),
-    path('<pk>/', views.InternalDetailView.as_view(), name='detail'),
-    path('<pk>/update/', views.InternalDetailUpdate.as_view(), name='update'),
-    path('<pk>/delete/', views.InternalDetailDelete.as_view(), name='delete'),
+    path('list_data/', views.InternalListData.as_view(), name='list_data'),
+    path('<int:pk>/', views.InternalDetailView.as_view(), name='detail'),
+    path('<int:pk>/update/', views.InternalDetailUpdate.as_view(), name='update'),
+    path('<int:pk>/delete/', views.InternalDetailDelete.as_view(), name='delete'),
 ]

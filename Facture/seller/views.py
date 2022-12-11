@@ -1,6 +1,6 @@
 from django.urls import reverse
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView
-from django.views.generic.edit import FormView, CreateView
+from django.views.generic.edit import FormView, CreateView, BaseCreateView
 from excel_response import ExcelResponse
 import logging
 from seller.models import Internal
@@ -16,13 +16,16 @@ class InternalCreateData(CreateView):
               'net_a_payer', 'advance_payment', 'total_payment', 'total_tax',
               'total_payment_after_tax']
 
+    success_message = "successfully created"
+
     def get_success_url(self):
         return reverse('seller:detail', kwargs={'pk': self.object.pk})
 
 
-class InternalAllData(ListView):
+class InternalListData(ListView):
     model = Internal
-    template_name = 'all_data.html'
+    template_name = 'list_data.html'
+    queryset = model.objects.order_by('-updated_date')
 
 
 class InternalDetailView(DetailView):
@@ -37,7 +40,9 @@ class InternalDetailUpdate(UpdateView):
               'reference', 'destination', 'quantity', 'percent', 'quantity_after_percent',
               'net_a_payer', 'advance_payment', 'total_payment', 'total_tax',
               'total_payment_after_tax']
-    success_url = "/"
+
+    def get_success_url(self):
+        return reverse('seller:detail', kwargs={'pk': self.object.pk})
 
 
 class InternalDetailDelete(DeleteView):
