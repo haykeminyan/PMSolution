@@ -12,33 +12,33 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Internal",
+            name='Internal',
             fields=[
-                ("id", models.AutoField(primary_key=True, serialize=False)),
-                ("name", models.CharField(max_length=30)),
-                ("created_date", models.DateField(auto_now_add=True)),
-                ("updated_date", models.DateField(auto_now=True)),
-                ("reference", models.CharField(blank=True, max_length=10)),
+                ('id', models.AutoField(primary_key=True, serialize=False)),
+                ('name', models.CharField(max_length=30)),
+                ('created_date', models.DateField(auto_now_add=True)),
+                ('updated_date', models.DateField(auto_now=True)),
+                ('reference', models.CharField(blank=True, max_length=10)),
                 (
-                    "destination",
+                    'destination',
                     models.CharField(
                         max_length=30,
                         validators=[
                             django.core.validators.RegexValidator(
-                                regex="(RECHARGE\\sEXPRESS\\s.+)"
+                                regex='(RECHARGE\\sEXPRESS\\s.+)'
                             )
                         ],
                     ),
                 ),
                 (
-                    "quantity",
+                    'quantity',
                     models.IntegerField(
-                        help_text="Armencho mihat gri sti",
+                        help_text='Armencho mihat gri sti',
                         validators=[django.core.validators.MinValueValidator(1.0)],
                     ),
                 ),
                 (
-                    "percent",
+                    'percent',
                     models.FloatField(
                         validators=[
                             django.core.validators.MinValueValidator(1.0),
@@ -46,12 +46,12 @@ class Migration(migrations.Migration):
                         ]
                     ),
                 ),
-                ("quantity_after_percent", models.FloatField()),
-                ("net_a_payer", models.FloatField()),
-                ("advance_payment", models.CharField(blank=True, max_length=10)),
-                ("total_payment", models.FloatField()),
-                ("total_tax", models.FloatField()),
-                ("total_payment_after_tax", models.FloatField()),
+                ('quantity_after_percent', models.FloatField()),
+                ('net_a_payer', models.FloatField()),
+                ('advance_payment', models.CharField(blank=True, max_length=10)),
+                ('total_payment', models.FloatField()),
+                ('total_tax', models.FloatField()),
+                ('total_payment_after_tax', models.FloatField()),
             ],
         ),
     ]

@@ -2,7 +2,7 @@ from django.urls import path
 from seller import views
 
 
-app_name = "seller"
+app_name = 'seller'
 
 urlpatterns = [
     path('', views.InternalCreateData.as_view(), name='create'),

@@ -12,14 +12,24 @@ class Internal(models.Model):
     created_date = models.DateField(auto_now_add=True)
     updated_date = models.DateField(auto_now=True)
     reference = models.CharField(max_length=10, blank=True)
-    destination = models.CharField(max_length=30, validators=[
-        RegexValidator(
-            regex='(RECHARGE\sEXPRESS\s.+)',
-        ),
-    ], default='RECHARGE EXPRESS 1234')
-    quantity = models.IntegerField(help_text='Armencho mihat gri sti', validators=[MinValueValidator(1.0)], blank=True,
-                                   null=True)
-    percent = models.FloatField(validators=[MinValueValidator(1.0), MaxValueValidator(10.0)], blank=True, null=True)
+    destination = models.CharField(
+        max_length=30,
+        validators=[
+            RegexValidator(
+                regex=r'(RECHARGE\sEXPRESS\s.+)',
+            ),
+        ],
+        default='RECHARGE EXPRESS 1234',
+    )
+    quantity = models.IntegerField(
+        help_text='Armencho mihat gri sti',
+        validators=[MinValueValidator(1.0)],
+        blank=True,
+        null=True,
+    )
+    percent = models.FloatField(
+        validators=[MinValueValidator(1.0), MaxValueValidator(10.0)], blank=True, null=True
+    )
     quantity_after_percent = models.FloatField(blank=True, null=True)
     net_a_payer = models.FloatField()
     advance_payment = models.CharField(max_length=10, blank=True)
@@ -41,13 +51,3 @@ class Internal(models.Model):
             raise ValidationError('Quantity, Quantity after percent are missing')
         elif not self.percent and not self.quantity_after_percent:
             raise ValidationError('Percent, Quantity after percent are missing')
-
-    # def save(self, *args, **kwargs):
-    #     if not self.quantity_after_percent:
-    #         self.quantity_after_percent = self.quantity * self.percent
-    #     if not self.quantity:
-    #         self.quantity = round(self.quantity_after_percent / self.percent, 2)
-    #     if not self.percent:
-    #         self.percent = round(self.quantity_after_percent / self.quantity, 2)
-    #     super(Internal, self).save()
-
