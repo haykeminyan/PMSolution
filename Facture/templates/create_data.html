@@ -5,95 +5,122 @@
 <link rel="stylesheet" href="{% static 'index.css' %}">
 <form name='model' method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-<div class="row" style="z-index:0;">
+<div class="row">
   <div class="col-md-12">
-    <table id="detailTable" class="table table-bordered table-sm">
+    <table id="detailTable" class="table-responsive table-bordered table-sm">
       <thead class="thead-light">
         <tr>
-          <th style="width:300px;">ID</th>
-          <th style="width:300px;">Name</th>
-          <th style="width:300px;">Reference</th>
+          <th>NUMERO</th>
+          <th>DATE</th>
+          <th>REFERENCE</th>
         </tr>
         <tbody>
-          <td> <input type='text' placeholder='ID' /> </td>
-          <td> <input type='text' placeholder='Name' /> </td>
-          <td> <input type='text' placeholder='Reference' /> </td>
+          <td> <input type='text' placeholder='NUMERO' name="numero" /> </td>
+          <td> <input type='text' placeholder='DATE' name="name"/> </td>
+          <td> <input type='text' placeholder='Reference' name="reference" /> </td>
       </tbody>
     </table>
-
+  </div>
+</div>
 <pre>
 
 
 
 
 </pre>
-  </div>
-    <div class="row" style="z-index:0;">
+    <div class="row">
   <div class="col-md-12">
-    <table id="detailTable" class="table table-bordered table-sm">
+    <table id="detailTable" class="table-responsive table-bordered table-smm">
       <thead class="thead-light">
           <tr>
-          <th style="width:300px;">Reference</th>
-          <th style="width:300px;">Destination</th>
-          <th style="width:300px;">Net a payer</th>
-          <th style="width:300px;">Quantity</th>
-           <th style="width:300px;">Percent</th>
+          <th>Reference</th>
+          <th>Destination</th>
+          <th>Quantity</th>
+           <th>Percent</th>
+              <th>Quantity after percent</th>
       </tr>
       </thead>
       <tbody>
-       <td> <input type='text' placeholder='Reference' /> </td>
-          <td> <input type='text' placeholder='Recharge Experess 1234' /> </td>
-          <td> <input type='text' placeholder='Cash' /> </td>
-          <td> <input type='text' placeholder='' /> </td>
-      <td> <input type='text' placeholder='2%' /> </td>
+       <td> <input type='text' placeholder='Reference' name="reference"/> </td>
+          <td> <input type='text' placeholder='Recharge Experess 1234' name="destination"/> </td>
+          <td> <input type='text' placeholder='Cash' name="quantity"/> </td>
+      <td> <input type='text' placeholder='2%' name="percent"/> </td>
+      <td> <input type='text' placeholder='3%' name="quantity_after_percent"/> </td>
 
       </tbody>
     </table>
-  </div>
-  <button class='btn btn-success'>Show</button>
+        </div>
+</div>
+      <pre>
+
+
+</pre>
+      <div class="row">
+  <div class="col-md-12">
+    <table id="detailTable" class="table-responsive table-bordered table-sm">
+      <thead class="thead-light">
+          <tr>
+          <th>Total H.T</th>
+          <th>Total Taxe</th>
+          <th>Total T.T.C.</th>
+          <th>Acompte</th>
+              <th>Net a payer</th>
+      </tr>
+      </thead>
+      <tbody>
+       <td> <input type='text' placeholder='Reference' name="reference"/> </td>
+          <td> <input type='text' placeholder='Recharge Experess 1234' /> </td>
+          <td> <input type='text' placeholder='Cash' /> </td>
+          <td> <input type='text' placeholder='' /> </td>
+      <td> <input type='text' placeholder='' /> </td>
+
+      </tbody>
+    </table>
+        </div>
 </div>
 
-                    <table >
-                    <tr>
-                         <label for="name"> <span class="number">1</span> <b>Name:</b></label>
-                        <input type="text" id="name" name="name" class='child'>
-                    </tr>
-                        <label for="name"><span class="number">2</span>Reference:</label>
-                        <input type="text" id="reference" name="reference" class='child'>
-                    </tr>
-                    </tr>
-                        <label for="name"><span class="number">3</span>Destination:</label>
-                        <input type="text" id="destination" name="destination">
-                    </tr>
-                    </tr>
-                        <label for="name"><span class="number">4</span>Net a payer:</label>
-                        <input type="text" id="net_a_payer" name="net_a_payer">
-                    </tr>
-                    </tr>
-                        <label for="name"><span class="number">5</span>Quantity:</label>
-                        <input type="text" id="quantity" name="quantity">
-                    </tr>
-                    </tr>
-                        <label for="name"><span class="number">6</span>Percent:</label>
-                        <input type="text" id="percent" name="percent">
-                    </tr>
-                    </tr>
-                        <label for="name"><span class="number">7</span>Quantity after percent:</label>
-                        <input type="text" id="quantity_after_percent" name="quantity_after_percent">
-                    </tr>
-                    </tr>
-                        <label for="name"><span class="number">8</span>Total payment:</label>
-                        <input type="text" id="total_payment" name="total_payment">
-                    </tr>
-                    </tr>
-                        <label for="name"><span class="number">9</span>Total tax:</label>
-                        <input type="text" id="total_tax" name="total_tax">
-                    </tr>
-                    </tr>
-                        <label for="name"><span class="number">10</span>Total payment after tax:</label>
-                        <input type="text" id="total_payment_after_tax" name="total_payment_after_tax">
-                    </tr>
-                </table>
+
+{#                    <table >#}
+{#                    <tr>#}
+{#                         <label for="name"> <span class="number">1</span> <b>Name:</b></label>#}
+{#                        <input type="text" id="name" name="name" class='child'>#}
+{#                    </tr>#}
+{#                        <label for="name"><span class="number">2</span>Reference:</label>#}
+{#                        <input type="text" id="reference" name="reference" class='child'>#}
+{#                    </tr>#}
+{#                    </tr>#}
+{#                        <label for="name"><span class="number">3</span>Destination:</label>#}
+{#                        <input type="text" id="destination" name="destination">#}
+{#                    </tr>#}
+{#                    </tr>#}
+{#                        <label for="name"><span class="number">4</span>Net a payer:</label>#}
+{#                        <input type="text" id="net_a_payer" name="net_a_payer">#}
+{#                    </tr>#}
+{#                    </tr>#}
+{#                        <label for="name"><span class="number">5</span>Quantity:</label>#}
+{#                        <input type="text" id="quantity" name="quantity">#}
+{#                    </tr>#}
+{#                    </tr>#}
+{#                        <label for="name"><span class="number">6</span>Percent:</label>#}
+{#                        <input type="text" id="percent" name="percent">#}
+{#                    </tr>#}
+{#                    </tr>#}
+{#                        <label for="name"><span class="number">7</span>Quantity after percent:</label>#}
+{#                        <input type="text" id="quantity_after_percent" name="quantity_after_percent">#}
+{#                    </tr>#}
+{#                    </tr>#}
+{#                        <label for="name"><span class="number">8</span>Total payment:</label>#}
+{#                        <input type="text" id="total_payment" name="total_payment">#}
+{#                    </tr>#}
+{#                    </tr>#}
+{#                        <label for="name"><span class="number">9</span>Total tax:</label>#}
+{#                        <input type="text" id="total_tax" name="total_tax">#}
+{#                    </tr>#}
+{#                    </tr>#}
+{#                        <label for="name"><span class="number">10</span>Total payment after tax:</label>#}
+{#                        <input type="text" id="total_payment_after_tax" name="total_payment_after_tax">#}
+{#                    </tr>#}
+{#                </table>#}
         <script>
         function validateAndSend() {
             if (model.quantity.value === '' && model.percent.value === '' && model.quantity_after_percent.value === ''){
@@ -115,5 +142,5 @@
             }
         }
     </script>
-<input type="submit" value="Submit" onclick="validateAndSend()">
+<input type="submit" value="Submit" class='btn btn-success' onclick="validateAndSend()">
 </form>
