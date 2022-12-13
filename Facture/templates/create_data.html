@@ -1,49 +1,97 @@
+{% load static %}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
-
+<link rel="stylesheet" href="{% static 'index.css' %}">
 <form name='model' method="POST" enctype="multipart/form-data">
     {% csrf_token %}
+<div class="row" style="z-index:0;">
+  <div class="col-md-12">
+    <table id="detailTable" class="table table-bordered table-sm">
+      <thead class="thead-light">
+        <tr>
+          <th style="width:300px;">ID</th>
+          <th style="width:300px;">Name</th>
+          <th style="width:300px;">Reference</th>
+        </tr>
+        <tbody>
+          <td> <input type='text' placeholder='ID' /> </td>
+          <td> <input type='text' placeholder='Name' /> </td>
+          <td> <input type='text' placeholder='Reference' /> </td>
+      </tbody>
+    </table>
+
+<pre>
+
+
+
+
+</pre>
+  </div>
+    <div class="row" style="z-index:0;">
+  <div class="col-md-12">
+    <table id="detailTable" class="table table-bordered table-sm">
+      <thead class="thead-light">
+          <tr>
+          <th style="width:300px;">Reference</th>
+          <th style="width:300px;">Destination</th>
+          <th style="width:300px;">Net a payer</th>
+          <th style="width:300px;">Quantity</th>
+           <th style="width:300px;">Percent</th>
+      </tr>
+      </thead>
+      <tbody>
+       <td> <input type='text' placeholder='Reference' /> </td>
+          <td> <input type='text' placeholder='Recharge Experess 1234' /> </td>
+          <td> <input type='text' placeholder='Cash' /> </td>
+          <td> <input type='text' placeholder='' /> </td>
+      <td> <input type='text' placeholder='2%' /> </td>
+
+      </tbody>
+    </table>
+  </div>
+  <button class='btn btn-success'>Show</button>
+</div>
+
                     <table >
                     <tr>
-                        <th > {% include 'static/1-circle-fill.svg' %} Name </th>
-                        <td><input type="text" name="name" /></td>
+                         <label for="name"> <span class="number">1</span> <b>Name:</b></label>
+                        <input type="text" id="name" name="name" class='child'>
                     </tr>
-                                              <tr>
-                        <th>{% include 'static/3-circle-fill.svg' %} Reference </th>
-                        <td><input type="text" name="reference"/></td>
+                        <label for="name"><span class="number">2</span>Reference:</label>
+                        <input type="text" id="reference" name="reference" class='child'>
                     </tr>
-                    <tr>
-                        <th>{% include 'static/2-circle-fill.svg' %} Destination </th>
-                        <td><input type="text" name="destination"/></td>
                     </tr>
-                    <tr>
-                        <th>{% include 'static/3-circle-fill.svg' %} Net A Payer </th>
-                        <td><input type="text" name="net_a_payer"/></td>
+                        <label for="name"><span class="number">3</span>Destination:</label>
+                        <input type="text" id="destination" name="destination">
                     </tr>
-                    <tr>
-                        <th> {% include 'static/4-circle-fill.svg' %} Quantity </th>
-                        <td><input type="text" name="quantity"/></td>
                     </tr>
-                    <tr>
-                        <th> {% include 'static/5-circle-fill.svg' %} Percent </th>
-                        <td><input type="text" name="percent"/></td>
+                        <label for="name"><span class="number">4</span>Net a payer:</label>
+                        <input type="text" id="net_a_payer" name="net_a_payer">
                     </tr>
-                    <tr>
-                        <th>{% include 'static/6-circle-fill.svg' %} Quantity after percent </th>
-                        <td><input type="text" name="quantity_after_percent"/></td>
                     </tr>
-                    <tr>
-                        <th> {% include 'static/7-circle-fill.svg' %}Total payment </th>
-                        <td><input type="text" name="total_payment"/></td>
+                        <label for="name"><span class="number">5</span>Quantity:</label>
+                        <input type="text" id="quantity" name="quantity">
                     </tr>
-                    <tr>
-                        <th> {% include 'static/8-circle-fill.svg' %} Total tax </th>
-                        <td><input type="text" name="total_tax"/></td>
                     </tr>
-                    <tr>
-                        <th> {% include 'static/9-circle-fill.svg' %} Total payment after tax </th>
-                        <td><input type="text" name="total_payment_after_tax"/></td>
+                        <label for="name"><span class="number">6</span>Percent:</label>
+                        <input type="text" id="percent" name="percent">
+                    </tr>
+                    </tr>
+                        <label for="name"><span class="number">7</span>Quantity after percent:</label>
+                        <input type="text" id="quantity_after_percent" name="quantity_after_percent">
+                    </tr>
+                    </tr>
+                        <label for="name"><span class="number">8</span>Total payment:</label>
+                        <input type="text" id="total_payment" name="total_payment">
+                    </tr>
+                    </tr>
+                        <label for="name"><span class="number">9</span>Total tax:</label>
+                        <input type="text" id="total_tax" name="total_tax">
+                    </tr>
+                    </tr>
+                        <label for="name"><span class="number">10</span>Total payment after tax:</label>
+                        <input type="text" id="total_payment_after_tax" name="total_payment_after_tax">
                     </tr>
                 </table>
         <script>
