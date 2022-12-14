@@ -1,10 +1,5 @@
-from django.urls import reverse
-from django.views.generic import ListView, DetailView, UpdateView, DeleteView
-from django.views.generic.edit import CreateView
-from excel_response import ExcelResponse
 import logging
 from django.http import HttpResponse, JsonResponse
-from django.views.decorators.csrf import csrf_exempt
 from rest_framework.exceptions import ValidationError, NotFound
 from rest_framework.parsers import JSONParser
 from rest_framework.views import APIView
@@ -19,7 +14,7 @@ logger.info('here goes your message')
 
 
 class InternalListView(APIView):
-    def get(self):
+    def get(self, request):
         snippets = Internal.objects.all()
         serializer = InternalSerializer(snippets, many=True)
         return JsonResponse(serializer.data, safe=False)

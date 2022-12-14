@@ -4,42 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d47d57ee-c2c6-46f9-93b5-a62f55d9663c" name="Changes" comment="version 0.2.3.1 client part">
-      <change afterPath="$PROJECT_DIR$/../.idea/PMSolution.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seller/migrations/0002_alter_internal_percent_alter_internal_quantity_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seller/migrations/0003_alter_internal_destination_and_more.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/seller/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/.vscode/extensions.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/.vscode/tasks.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/angular.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/tsconfig.spec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../tutorial/.idea/tutorial.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facture/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Facture/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facture/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Facture/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/urls.py" afterDir="false" />
+    <list default="true" id="d47d57ee-c2c6-46f9-93b5-a62f55d9663c" name="Changes" comment="version 0.3 rest part">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seller/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/create_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_data.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +28,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="33f7fa8e-9906-4697-a25b-813417996502" />
+        <option name="url" value="git@github.com:haykeminyan/PMSolution.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -70,22 +45,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/haykeminyan/PMSolution/Facture&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;database.data.views&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/haykeminyan/PMSolution/Facture",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "database.data.views",
+    "ts.external.directory.path": "/Users/haykeminyan/Library/Application Support/JetBrains/Toolbox/apps/PyCharm-P/ch-0/222.4459.20/PyCharm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/static" />
@@ -168,7 +144,7 @@
       <workItem from="1670967066037" duration="169000" />
       <workItem from="1670967332300" duration="1431000" />
       <workItem from="1670969073289" duration="3881000" />
-      <workItem from="1671019850364" duration="4442000" />
+      <workItem from="1671019850364" duration="5345000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit (created database and connection with TablePlus)">
       <created>1666715570066</created>
@@ -254,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670938660114</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="version 0.3 rest part">
+      <created>1671024582759</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1671024582759</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -284,6 +267,7 @@
     <MESSAGE value="version 0.2.2 need to fix bad types" />
     <MESSAGE value="version 0.2.3 client part" />
     <MESSAGE value="version 0.2.3.1 client part" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 0.2.3.1 client part" />
+    <MESSAGE value="version 0.3 rest part" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 0.3 rest part" />
   </component>
 </project>
