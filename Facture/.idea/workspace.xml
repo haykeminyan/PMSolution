@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d47d57ee-c2c6-46f9-93b5-a62f55d9663c" name="Changes" comment="version 0.2.3.1 client part">
+      <change afterPath="$PROJECT_DIR$/../.idea/PMSolution.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seller/migrations/0002_alter_internal_percent_alter_internal_quantity_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seller/migrations/0003_alter_internal_destination_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/seller/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/.vscode/extensions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/.vscode/launch.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/.vscode/tasks.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/tsconfig.spec.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../tutorial/.idea/tutorial.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Facture/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Facture/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Facture/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Facture/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seller/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seller/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/create_data.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/create_data.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GbQbaH6ZtZP0WvzXkka7rgGKNo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/haykeminyan/PMSolution/Facture&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.data.views&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/static" />
+      <recent name="$PROJECT_DIR$/seller" />
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/static/images" />
+      <recent name="$PROJECT_DIR$/templates/static" />
+      <recent name="$PROJECT_DIR$/templates/static/css" />
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Facture" type="Python.DjangoServer" factoryName="Django server" singleton="true">
+      <module name="Facture" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="Facture.settings" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="true" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="http://127.0.0.1:8000/" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d47d57ee-c2c6-46f9-93b5-a62f55d9663c" name="Changes" comment="" />
+      <created>1666654876443</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666654876443</updated>
+      <workItem from="1666654886041" duration="2822000" />
+      <workItem from="1666710479945" duration="5178000" />
+      <workItem from="1666779447491" duration="10000" />
+      <workItem from="1666999917673" duration="697000" />
+      <workItem from="1667046208409" duration="4218000" />
+      <workItem from="1667079572752" duration="1530000" />
+      <workItem from="1667211255969" duration="171000" />
+      <workItem from="1667772718274" duration="3903000" />
+      <workItem from="1667813855764" duration="9000" />
+      <workItem from="1668369863309" duration="892000" />
+      <workItem from="1668373204107" duration="6512000" />
+      <workItem from="1668425246749" duration="51000" />
+      <workItem from="1668459200866" duration="9311000" />
+      <workItem from="1668503905829" duration="10000" />
+      <workItem from="1668972849857" duration="598000" />
+      <workItem from="1669023852893" duration="9000" />
+      <workItem from="1669578062393" duration="11597000" />
+      <workItem from="1669629154963" duration="11000" />
+      <workItem from="1669668807199" duration="7766000" />
+      <workItem from="1669711916421" duration="60000" />
+      <workItem from="1669759806547" duration="5345000" />
+      <workItem from="1670366118125" duration="7209000" />
+      <workItem from="1670405879325" duration="8000" />
+      <workItem from="1670625518950" duration="9683000" />
+      <workItem from="1670713358964" duration="6875000" />
+      <workItem from="1670789454469" duration="1196000" />
+      <workItem from="1670801737567" duration="598000" />
+      <workItem from="1670803299687" duration="6169000" />
+      <workItem from="1670879122318" duration="15036000" />
+      <workItem from="1670935155632" duration="3503000" />
+      <workItem from="1670966843661" duration="77000" />
+      <workItem from="1670966944279" duration="71000" />
+      <workItem from="1670967066037" duration="169000" />
+      <workItem from="1670967332300" duration="1431000" />
+      <workItem from="1670969073289" duration="3881000" />
+      <workItem from="1671019850364" duration="4442000" />
+    </task>
+    <task id="LOCAL-00001" summary="initial commit (created database and connection with TablePlus)">
+      <created>1666715570066</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666715570066</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add methods for valuation">
+      <created>1668425279167</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668425279167</updated>
+    </task>
+    <task id="LOCAL-00003" summary="first variant of client part (a lot of bugs)">
+      <created>1668469589236</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668469589236</updated>
+    </task>
+    <task id="LOCAL-00004" summary="version 0.1">
+      <created>1669590513326</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669590513326</updated>
+    </task>
+    <task id="LOCAL-00005" summary="version 0.1.1 added rendering after post method view">
+      <created>1669680818267</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669680818267</updated>
+    </task>
+    <task id="LOCAL-00006" summary="version 0.1.2 added excel (need add feature for admin area button!)">
+      <created>1669766494802</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669766494802</updated>
+    </task>
+    <task id="LOCAL-00007" summary="version 0.1.2.1 working with html and added svg &amp;&amp; css">
+      <created>1670373365062</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1670373365062</updated>
+    </task>
+    <task id="LOCAL-00008" summary="version 0.2 refactor added generics (need to repair valuation)">
+      <created>1670635318555</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1670635318555</updated>
+    </task>
+    <task id="LOCAL-00009" summary="version 0.2.1 small changes">
+      <created>1670720851047</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670720851047</updated>
+    </task>
+    <task id="LOCAL-00010" summary="version 0.2.2 need to fix bad types">
+      <created>1670809286456</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670809286456</updated>
+    </task>
+    <task id="LOCAL-00011" summary="version 0.2.3 client part">
+      <created>1670897232917</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670897232917</updated>
+    </task>
+    <task id="LOCAL-00012" summary="version 0.2.3.1 client part">
+      <created>1670938660114</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670938660114</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit (created database and connection with TablePlus)" />
+    <MESSAGE value="add methods for valuation" />
+    <MESSAGE value="first variant of client part (a lot of bugs)" />
+    <MESSAGE value="version 0.1" />
+    <MESSAGE value="version 0.1.1 added rendering after post method view" />
+    <MESSAGE value="version 0.1.2 added excel (need add feature for admin area button!)" />
+    <MESSAGE value="version 0.1.2.1 working with html and added svg &amp;&amp; css" />
+    <MESSAGE value="version 0.2 refactor added generics (need to repair valuation)" />
+    <MESSAGE value="version 0.2.1 small changes" />
+    <MESSAGE value="version 0.2.2 need to fix bad types" />
+    <MESSAGE value="version 0.2.3 client part" />
+    <MESSAGE value="version 0.2.3.1 client part" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 0.2.3.1 client part" />
+  </component>
+</project>
