@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FactureService} from "./services/facture.service";
+import {FactureModel} from "./models/facture.model";
 
 @Component({
   selector: 'app-root',
@@ -7,23 +8,14 @@ import {FactureService} from "./services/facture.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
+  facture!: FactureModel[]
   constructor(private factureService: FactureService) { }
 
   ngOnInit(): void {
-    this.getAll();
-  }
-
-  getAll() {
-    this.factureService.getAll().subscribe({
-        next: (data) => {
-          console.log(data);
-        },
-        error: (error) => {
-          console.log(error);
-        }
-      }
-    )
+    this.factureService.getAll().subscribe(response => {
+      this.facture = response
+      console.log(this.facture)
+    })
   }
 
 }

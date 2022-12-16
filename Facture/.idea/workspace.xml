@@ -5,8 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47d57ee-c2c6-46f9-93b5-a62f55d9663c" name="Changes" comment="version 0.3 rest part">
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/add-facture/add-facture.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/add-facture/add-facture.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/add-facture/add-facture.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/add-facture/add-facture.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-details/facture-details.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-details/facture-details.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-details/facture-details.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-details/facture-details.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/facture/facture.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/facture/facture.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/facture/facture.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/facture/facture.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/models/facture.model.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/models/facture.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/services/facture.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/services/facture.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seller/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/tsconfig.spec.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,23 +73,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/haykeminyan/PMSolution/Facture",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "database.data.views",
-    "ts.external.directory.path": "/Users/haykeminyan/Library/Application Support/JetBrains/Toolbox/apps/PyCharm-P/ch-0/222.4459.20/PyCharm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/haykeminyan/PMSolution/Facture&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.data.views&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/haykeminyan/Library/Application Support/JetBrains/Toolbox/apps/PyCharm-P/ch-0/222.4459.20/PyCharm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/static" />
@@ -144,7 +172,8 @@
       <workItem from="1670967066037" duration="169000" />
       <workItem from="1670967332300" duration="1431000" />
       <workItem from="1670969073289" duration="3881000" />
-      <workItem from="1671019850364" duration="5345000" />
+      <workItem from="1671019850364" duration="6657000" />
+      <workItem from="1671136758376" duration="2091000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit (created database and connection with TablePlus)">
       <created>1666715570066</created>
@@ -237,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671024582759</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="version 0.3 rest part">
+      <created>1671025209343</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1671025209343</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
