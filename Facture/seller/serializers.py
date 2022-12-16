@@ -11,6 +11,8 @@ class InternalSerializer(serializers.ModelSerializer):
             'reference',
             'destination',
             'quantity',
+            'created_date',
+            'updated_date',
             'percent',
             'quantity_after_percent',
             'net_a_payer',
