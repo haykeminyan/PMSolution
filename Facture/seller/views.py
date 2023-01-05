@@ -1,12 +1,15 @@
 import logging
 from django.http import HttpResponse, JsonResponse
+from rest_framework import generics
 from rest_framework.exceptions import ValidationError, NotFound
 from rest_framework.parsers import JSONParser
+from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from seller.models import Internal
 
 from seller.serializers import InternalSerializer
+from django_filters.rest_framework import DjangoFilterBackend
 
 logger = logging.getLogger('django')
 
@@ -80,6 +83,15 @@ class InternalDetailListView(APIView):
         facture.delete()
         return HttpResponse(status=204)
 
+
+class InternalDetailListFilterView(generics.ListAPIView):
+    queryset = Internal.objects.all()
+    serializer_class = InternalSerializer
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['name', 'total_payment', 'total_tax', 'total_payment_after_tax']
+
+    def get(self, request, *args, **kwargs):
+        return Response(self.list(request, *args, **kwargs).data['results'])
 
 #
 # def post(request, *args, **kwargs):

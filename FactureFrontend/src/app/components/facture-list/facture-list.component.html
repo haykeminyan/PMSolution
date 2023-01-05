@@ -1,14 +1,11 @@
-<!--<ul class="list-group">-->
-<!--  <li-->
-<!--    *ngFor="let item of facture"-->
-<!--    class="list-group-item">-->
-<!--    {{ item.name }}-->
-<!--    {{ item.name }}-->
-<!--  </li>-->
-<!--</ul>-->
-<div class="search-hero">
-  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">
-</div>
+<form>
+  <div class="mb-3 row">
+    <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Full text search:</label>
+    <div class="col-xs-3 col-sm-auto">
+      <input id="table-filtering-search" class="form-control" type="text" [(ngModel)]="searchText" [formControl]="filter" />
+    </div>
+  </div>
+</form>
 <table class="table table-striped">
   <thead>
   <tr>
@@ -33,12 +30,11 @@
         class="me-2"
         style="width: 20px"
       />
-      {{ country.name }}
-    </td>
+    <td><ngb-highlight [result]="country.name" [term]="filter.value"></ngb-highlight></td>
     <td>{{ country.created_date }}</td>
     <td>{{ country.updated_date}}</td>
     <td>{{ country.net_a_payer | number}}</td>
-    <td>{{ country.percent  }}</td>
+    <td><ngb-highlight [result]="country.percent | number" [term]="filter.value"></ngb-highlight></td>
     <td>{{ country.quantity  }}</td>
     <td>{{ country.quantity_after_percent | number }}</td>
     <td>{{ country.reference  }}</td>
