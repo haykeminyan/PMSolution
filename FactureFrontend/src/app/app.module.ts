@@ -11,6 +11,8 @@ import { FactureComponent } from './facture/facture.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import {FactureListComponent} from "./components/facture-list/facture-list.component";
+import { SearchFilterPipe } from './search-filter.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import {FactureListComponent} from "./components/facture-list/facture-list.compo
     AddFactureComponent,
     FactureDetailsComponent,
     // FactureListComponent,
-    FactureComponent
+    FactureComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -27,9 +30,13 @@ import {FactureListComponent} from "./components/facture-list/facture-list.compo
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    BrowserAnimationsModule
   ],
   providers: [],
+  exports: [
+    SearchFilterPipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

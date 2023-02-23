@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FactureService} from "./services/facture.service";
 import {FactureModel} from "./models/facture.model";
+import {FactureListComponent} from "./components/facture-list/facture-list.component";
 
 @Component({
   selector: 'app-root',

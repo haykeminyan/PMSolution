@@ -1,11 +1,21 @@
-import {Component, PipeTransform} from '@angular/core';
+import {AfterViewInit, Component, OnInit, PipeTransform, ViewChild} from '@angular/core';
 import {FactureService} from "../../services/facture.service";
 import {HttpClient} from "@angular/common/http";
 import {FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {AsyncPipe, DecimalPipe, NgFor} from "@angular/common";
+import {AsyncPipe, DatePipe, DecimalPipe, NgFor, NgForOf} from "@angular/common";
 import {NgbPagination, NgbTypeaheadModule} from "@ng-bootstrap/ng-bootstrap";
 import {Ng2SearchPipeModule} from "ng2-search-filter";
 import {Observable, pipe,map, startWith} from "rxjs";
+import { Injectable } from '@angular/core';
+import {AppModule} from "../../app.module";
+import {RouterOutlet} from "@angular/router";
+import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from "@angular/material/button";
+import {MatSort, MatSortModule} from "@angular/material/sort";
+import {MatInputModule} from "@angular/material/input";
+import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
+
 
 export interface Facture {
   id?: string
@@ -24,90 +34,71 @@ export interface Facture {
   total_payment_after_tax?: number
 }
 
-
-
+@Injectable({
+  providedIn: 'root'
+})
 @Component({
   selector: 'facture-list-component',
   standalone: true,
-  imports: [DecimalPipe, NgFor, AsyncPipe, ReactiveFormsModule, NgbTypeaheadModule, Ng2SearchPipeModule, NgbPagination, FormsModule],
+  imports: [NgFor, AsyncPipe, ReactiveFormsModule, NgbTypeaheadModule, Ng2SearchPipeModule, NgbPagination, FormsModule, NgForOf, RouterOutlet, MatTableModule, MatIconModule, MatButtonModule, DatePipe, DecimalPipe, MatSortModule, MatInputModule, MatPaginatorModule],
   templateUrl: './facture-list.component.html',
-  providers: [DecimalPipe],
+  providers: [DecimalPipe, DatePipe],
   styleUrls: ['./facture-list.component.css']
 })
-export class FactureListComponent {
+export class FactureListComponent implements OnInit, AfterViewInit{
   page = 1;
   pageSize = 20;
   facture!: Object | any
   collectionSize: any
-  countries?: Observable<void>
+  countries: any
   filter = new FormControl('', { nonNullable: true });
-  searchText: any;
+  searchTerm = '';
+  displayedColumns = ['name', 'created_date', 'updated_date', 'reference',
+    'destination', 'quantity', 'percent', 'quantity_after_percent', 'net_a_payer',
+    'advance_payment', 'total_payment', 'total_tax',
+    'total_payment_after_tax', 'details', 'update', 'delete'];
+  public dataSource = new MatTableDataSource<Facture>();
 
-  constructor(private factureService: FactureService, private httpClient: HttpClient, pipe: DecimalPipe) {
-    this.getAll().subscribe(response => {
-      this.facture = response
-      console.log(this.facture)
+  @ViewChild(MatSort) sort: MatSort | undefined;
+  @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
+  constructor(private httpClient: HttpClient) {
 
-    this.countries = this.filter.valueChanges.pipe(
-      startWith(''),
-      map((text) => this.search(text, pipe)),
-    );
-      console.log(this.facture)
+
+  }
+  public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
+
+  }
+
+
+  ngOnInit() {
+    this.getAll();
+  }
+
+  ngAfterViewInit(): void {
+    // @ts-ignore
+    this.dataSource.paginator = this.paginator;
+    // @ts-ignore
+    this.dataSource.sort = this.sort
+
+    console.log(this.dataSource.data)
+    console.log(this.dataSource.paginator?.pageIndex)
+  }
+
+  public getAll() {
+    return this.httpClient.get('http://localhost:8000/api/facture').subscribe(res=> {
+      this.dataSource.data = res as Facture[]
     })
   }
 
+  public redirectToDetails = (id: string) => {
 
-  ngOnInit(): void {
-    this.getSlider();
   }
+  public redirectToUpdate = (id: string) => {
 
-  search(text: string, pipe: PipeTransform) {
-     this.getAll().subscribe(response => {
-       this.facture = response
-       console.log(this.facture)
-
-
-    return this.facture.filter((country: any) => {
-      const term = text.toLowerCase();
-      console.log(term)
-      console.log(country)
-      return (
-        country.name.toLowerCase().includes(term)||
-        pipe.transform(country.id).includes(term)||
-        pipe.transform(country.name).includes(term) ||
-        pipe.transform(country.created_date).includes(term) ||
-        pipe.transform(country.updated_date).includes(term) ||
-        pipe.transform(country.reference).includes(term) ||
-        pipe.transform(country.destination).includes(term) ||
-        pipe.transform(country.quantity).includes(term) ||
-        pipe.transform(country.percent).includes(term) ||
-        pipe.transform(country.quantity_after_percent).includes(term) ||
-        pipe.transform(country.net_a_payer).includes(term) ||
-        pipe.transform(country.advance_payment).includes(term) ||
-        pipe.transform(country.total_payment).includes(term) ||
-        pipe.transform(country.total_tax).includes(term) ||
-        pipe.transform(country.total_payment_after_tax).includes(term)
-      );
-    });
-     });
   }
+  public redirectToDelete = (id: string) => {
 
-
-  getAll() {
-    return this.httpClient.get('http://localhost:8000/api/facture')
-  }
-
-  getSlider() {
-    return this.getAll().subscribe(response => {
-      this.facture = response
-        this.countries = this.facture?.map((item: any, i: number) => ({ id: i + 1, ...item })).slice(
-        (this.page - 1) * this.pageSize,
-        (this.page - 1) * this.pageSize + this.pageSize,
-      );
-      this.collectionSize = this.facture.length
-      this.facture = this.countries
-      }
-    )
   }
 
 
