@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d47d57ee-c2c6-46f9-93b5-a62f55d9663c" name="Changes" comment="version 0.3.1 add created_date and updated_date">
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/search-filter.pipe.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/search-filter.pipe.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,14 +53,17 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/haykeminyan/PMSolution/Facture&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;database.data.views&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/haykeminyan/Library/Application Support/JetBrains/Toolbox/apps/PyCharm-P/ch-0/222.4459.20/PyCharm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;
+    &quot;ts.external.directory.path&quot;: &quot;/Users/haykeminyan/Library/Application Support/JetBrains/Toolbox/apps/PyCharm-P/ch-0/222.4459.20/PyCharm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -158,6 +157,10 @@
       <workItem from="1675006559035" duration="2984000" />
       <workItem from="1675070732391" duration="24000" />
       <workItem from="1677180264868" duration="1708000" />
+      <workItem from="1677230127451" duration="604000" />
+      <workItem from="1677497353079" duration="601000" />
+      <workItem from="1684527393672" duration="646000" />
+      <workItem from="1684601775464" duration="602000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit (created database and connection with TablePlus)">
       <created>1666715570066</created>

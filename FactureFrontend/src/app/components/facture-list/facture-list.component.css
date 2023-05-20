@@ -8,3 +8,27 @@ th.mat-header-cell {
   text-align: left;
   max-width: 300px;
 }
+
+.tab-content{
+  min-width: 100%;
+  border-collapse: collapse;
+  border: 1px black solid;
+}
+th {
+  border-bottom: 3px black solid;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  white-space: nowrap;
+}
+
+td {
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  text-align: center;
+}
+
+tr {
+  min-width: 200%;
+}

@@ -20,7 +20,6 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     AppComponent,
     AddFactureComponent,
     FactureDetailsComponent,
-    // FactureListComponent,
     FactureComponent,
     SearchFilterPipe
   ],
