@@ -1,7 +1,18 @@
-<table class="table table-striped">
-  <div class="search-hero">
-    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">
+<div style="margin: 15px">
+  <div style="display: flex">
+    <mat-form-field appearance="fill" class="example-form-field">
+      <mat-label> -Sorting- </mat-label>
+      <mat-select [formControl]="sortOrderControl">
+        <mat-option value="">-select-</mat-option>
+        <mat-option value="id-by-desc">Id By Desc</mat-option>
+        <mat-option value="id-by-asc">Id By Asc</mat-option>
+        <mat-option value="name-by-desc">Name By Desc</mat-option>
+        <mat-option value="name-by-asc">Name By Asc</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
+
+<table class="table table-striped">
   <thead>
   <tr>
     <th scope="col">id</th>
@@ -20,7 +31,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let facture of factures | filter:searchText">
+  <tr *ngFor="let facture of factures">
     <th scope="row">{{ facture.id }}</th>
     <td>
       <img
@@ -45,22 +56,5 @@
   </tr>
   </tbody>
 </table>
-<div class="d-flex justify-content-between p-2">
-  <ngb-pagination
-    [collectionSize]="collectionSize"
-    [(page)]="page"
-    [pageSize]="pageSize"
-    [maxSize]="5"
-    [rotate]="true"
-    [ellipses]="false"
-    [boundaryLinks]="true"
-    (pageChange)="getListOfAllFacture()"
-  >
-  </ngb-pagination>
 
-  <select class="form-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="getListOfAllFacture()">
-    <option [ngValue]="2">2 items per page</option>
-    <option [ngValue]="4">4 items per page</option>
-    <option [ngValue]="6">6 items per page</option>
-  </select>
 </div>

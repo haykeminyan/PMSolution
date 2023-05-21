@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AddFactureComponent } from './components/add-facture/add-facture.component';
 import { FactureDetailsComponent } from './components/facture-details/facture-details.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FactureComponent } from './facture/facture.component';
@@ -14,6 +14,7 @@ import {FactureListComponent} from "./components/facture-list/facture-list.compo
 import { SearchFilterPipe } from './search-filter.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -24,6 +25,9 @@ import {MatSidenavModule} from "@angular/material/sidenav";
     SearchFilterPipe
   ],
   imports: [
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     FactureListComponent,
     FormsModule,

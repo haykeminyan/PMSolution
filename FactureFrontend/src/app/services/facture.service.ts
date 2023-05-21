@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FactureModel } from '../models/facture.model';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import {Facture} from "../facture";
 const baseUrl = 'http://localhost:8000/api/';
 
 @Injectable({
@@ -12,8 +13,13 @@ export class FactureService {
   private url = 'http://localhost:8000/api/facture'
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<any> {
-    return this.http.get(this.url) as Observable<any>;
+  get(sortColumn: string, sortType: string): Observable<any> {
+    let url = 'http://localhost:8000/api/facture/filters?ordering='
+    if(sortColumn && sortType){
+      url = `${url}${sortColumn}`
+    }
+    console.log(url)
+    return this.http.get<Facture[]>(url);
   }
 
   create(data: any): Observable<any> {

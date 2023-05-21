@@ -15,9 +15,11 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.factureService.getAll().subscribe(response => {
-      this.facture = response
-    })
+    // this.getApi()
   }
-
+  // getApi() {
+  //   this.factureService.get().subscribe(response => {
+  //     this.facture = response
+  //   })
+  // }
 }
