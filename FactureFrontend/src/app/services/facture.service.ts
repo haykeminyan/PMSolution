@@ -18,6 +18,7 @@ export class FactureService {
     if(sortColumn && sortType){
       url = `${url}${sortColumn}`
     }
+
     return this.http.get<Facture[]>(url);
   }
 
