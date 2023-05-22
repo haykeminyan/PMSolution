@@ -13,11 +13,18 @@ export class FactureService {
   private url = 'http://localhost:8000/api/facture'
   constructor(private http: HttpClient) { }
 
-  get(sortColumn: string, sortType: string): Observable<any> {
-    let url = 'http://localhost:8000/api/facture/filters?ordering='
-    if(sortColumn && sortType){
-      url = `${url}${sortColumn}`
+  get(sortColumn: string, sortType: string, searchKey: string): Observable<Facture[]> {
+    let url = 'http://localhost:8000/api/facture'
+    if (sortColumn && sortType && searchKey){
+      url = `${url}/filters?search=${searchKey}&ordering=${sortColumn}`
     }
+    else if(sortColumn && sortType){
+      url = `${url}/filters?ordering=${sortColumn}`
+    }
+    else if (searchKey){
+      url = `${url}/filters?search=${searchKey}`
+    }
+    console.log(url)
 
     return this.http.get<Facture[]>(url);
   }

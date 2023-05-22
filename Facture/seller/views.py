@@ -7,9 +7,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from seller.models import Internal
+from seller.pagination import StandardResultsSetPagination
 
 from seller.serializers import InternalSerializer
-from django_filters.rest_framework import DjangoFilterBackend
 
 logger = logging.getLogger('django')
 
@@ -17,7 +17,9 @@ logger.info('here goes your message')
 
 
 class InternalListView(APIView):
-    def get(self, request):
+    pagination_class = StandardResultsSetPagination
+
+    def get(self, request, *args, **kwargs):
         snippets = Internal.objects.all()
         serializer = InternalSerializer(snippets, many=True)
         return JsonResponse(serializer.data, safe=False)
@@ -84,11 +86,16 @@ class InternalDetailListView(APIView):
         return HttpResponse(status=204)
 
 
-class InternalDetailListFilterView(generics.ListAPIView):
+class InternalDetailFilterView(generics.ListAPIView):
     queryset = Internal.objects.all()
     serializer_class = InternalSerializer
-    filter_backends = [filters.OrderingFilter]
+    filter_backends = [filters.OrderingFilter, filters.SearchFilter]
     ordering_fields = '__all__'
+    search_fields = [
+            'id',
+            'name',
+        ]
 
     def get(self, request, *args, **kwargs):
         return Response(self.list(request, *args, **kwargs).data['results'])
+

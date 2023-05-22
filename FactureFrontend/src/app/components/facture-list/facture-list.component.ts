@@ -22,7 +22,7 @@ import {MatSelectModule} from "@angular/material/select";
 @Component({
   selector: 'facture-list-component',
   standalone: true,
-  imports: [DecimalPipe, NgFor, FormsModule, NgbTypeaheadModule, NgbPaginationModule, DatePipe, Ng2SearchPipeModule, MatInputModule, MatSelectModule, ReactiveFormsModule],
+  imports: [DecimalPipe, NgFor, FormsModule, NgbTypeaheadModule, NgbPaginationModule, DatePipe, Ng2SearchPipeModule, MatInputModule, MatSelectModule, ReactiveFormsModule, MatButtonModule, MatIconModule],
   templateUrl: './facture-list.component.html',
   providers: [DecimalPipe, DatePipe],
   styleUrls: ['./facture-list.component.css']
@@ -30,18 +30,19 @@ import {MatSelectModule} from "@angular/material/select";
 export class FactureListComponent implements OnInit{
   page = 1;
   pageSize = 4;
-  factures: Facture[] = [];
   sortOrderControl = new FormControl('');
-
+  searchKey = new FormControl('')
+  factures: Facture[] = [];
   constructor( private service: FactureService) {
   }
 
 
   ngOnInit() {
-    this.getApi('', '')
+    this.getApi('', '', '')
     this.sortOrderControl.valueChanges.subscribe((value) => {
       if (value) {
-        this.doSorting(value);
+        let sortResult = this.doSorting(value)
+        this.getApi(sortResult.sortColumn, sortResult.sortType, '')
       }
       console.log(this.factures)
     });
@@ -68,10 +69,21 @@ export class FactureListComponent implements OnInit{
     }
     // TO DO EXPAND AND ADD ALL FILTERS!
 
-    this.getApi(sortColumn, sortType);
+    // this.getApi(sortColumn, sortType, searchKey);
+    return {sortColumn, sortType}
   }
-  getApi(sortColumn: string, sortType: string){
-    this.service.get(sortColumn, sortType).subscribe(
+
+  searchByName() {
+    let sortResult = this.doSorting(this.sortOrderControl.value ?? '');
+    this.getApi(
+      sortResult.sortColumn,
+      sortResult.sortType,
+      this.searchKey.value ?? ''
+    );
+  }
+
+  getApi(sortColumn: string, sortType: string, searchKey: string){
+    this.service.get(sortColumn, sortType, searchKey).subscribe(
       response => {
         this.factures = response
       }

@@ -10,6 +10,13 @@
         <mat-option value="name-by-asc">Name By Asc</mat-option>
       </mat-select>
     </mat-form-field>
+    <mat-form-field class="example-form-field">
+      <mat-label>Search By Car Name</mat-label>
+      <input matInput type="text" [formControl]="searchKey">
+      <button  matSuffix mat-icon-button aria-label="Clear" (click)="searchByName()" >
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
   </div>
 
 <table class="table table-striped">
