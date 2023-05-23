@@ -20,8 +20,10 @@ class InternalListView(APIView):
     pagination_class = StandardResultsSetPagination
 
     def get(self, request, *args, **kwargs):
-        snippets = Internal.objects.all()
-        serializer = InternalSerializer(snippets, many=True)
+        queryset = Internal.objects.all()
+        paginator = self.pagination_class()
+        result_page = paginator.paginate_queryset(queryset, request)
+        serializer = InternalSerializer(result_page, many=True)
         return JsonResponse(serializer.data, safe=False)
 
     def post(self, request, *args, **kwargs):
@@ -97,5 +99,8 @@ class InternalDetailFilterView(generics.ListAPIView):
         ]
 
     def get(self, request, *args, **kwargs):
-        return Response(self.list(request, *args, **kwargs).data['results'])
+        queryset = Internal.objects.all()
+        paginator = self.pagination_class()
+        result_page = paginator.paginate_queryset(queryset, request)
+        return Response(self.list(result_page, *args, **kwargs).data['results'])
 
