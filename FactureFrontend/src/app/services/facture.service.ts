@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpResponse} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FactureModel } from '../models/facture.model';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
@@ -13,20 +13,21 @@ export class FactureService {
   private url = 'http://localhost:8000/api/facture'
   constructor(private http: HttpClient) { }
 
-  get(sortColumn: string, sortType: string, searchKey: string): Observable<Facture[]> {
+  get(sortColumn: string, sortType: string, searchKey: string, currentPage: number,pageSize: number): Observable<HttpResponse<HttpResponse<any>>> {
     let url = 'http://localhost:8000/api/facture'
     if (sortColumn && sortType && searchKey){
-      url = `${url}/filters?search=${searchKey}&ordering=${sortColumn}`
+      url = `${url}/filters?search=${searchKey}&ordering=${sortColumn}?p=${currentPage}&page_size=${pageSize}`
     }
     else if(sortColumn && sortType){
       url = `${url}/filters?ordering=${sortColumn}`
     }
-    else if (searchKey){
-      url = `${url}/filters?search=${searchKey}`
+    if (searchKey){
+      url = `${url}?p=${currentPage}&page_size=${pageSize}`
+      console.log(url)
     }
     console.log(url)
 
-    return this.http.get<Facture[]>(url);
+    return this.http.get<HttpResponse<any>>(url, { observe: 'response' });
   }
 
   create(data: any): Observable<any> {

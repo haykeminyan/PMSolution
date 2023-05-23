@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d47d57ee-c2c6-46f9-93b5-a62f55d9663c" name="Changes" comment="version 0.3.2 small update in views.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Facture/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Facture/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seller/pagination.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/pagination.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/seller/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,7 +164,9 @@
       <workItem from="1684601775464" duration="1199000" />
       <workItem from="1684693287819" duration="3076000" />
       <workItem from="1684744563018" duration="662000" />
-      <workItem from="1684779536372" duration="4000000" />
+      <workItem from="1684779536372" duration="8450000" />
+      <workItem from="1684827358544" duration="598000" />
+      <workItem from="1684871883697" duration="2673000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit (created database and connection with TablePlus)">
       <created>1666715570066</created>

@@ -11,12 +11,23 @@
       </mat-select>
     </mat-form-field>
     <mat-form-field class="example-form-field">
-      <mat-label>Search By Car Name</mat-label>
+      <mat-label>Search By Name</mat-label>
       <input matInput type="text" [formControl]="searchKey">
       <button  matSuffix mat-icon-button aria-label="Clear" (click)="searchByName()" >
         <mat-icon>search</mat-icon>
       </button>
     </mat-form-field>
+    <div class="example-form-field">
+      <mat-paginator
+        [length]="totalRecords"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 15]"
+        [pageIndex]="pageIndex"
+        aria-label="Select page"
+        (page)="handlePageEvent($event)"
+      >
+      </mat-paginator>
+  </div>
   </div>
 
 <table class="table table-striped">

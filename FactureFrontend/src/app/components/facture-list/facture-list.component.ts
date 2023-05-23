@@ -10,7 +10,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatSort, MatSortModule} from "@angular/material/sort";
 import {MatInputModule} from "@angular/material/input";
-import {MatPaginator, MatPaginatorModule} from "@angular/material/paginator";
+import {MatPaginator, MatPaginatorModule, PageEvent} from "@angular/material/paginator";
 import {FactureService} from "../../services/facture.service";
 import {Facture} from "../../facture";
 import {MatSelectModule} from "@angular/material/select";
@@ -22,27 +22,31 @@ import {MatSelectModule} from "@angular/material/select";
 @Component({
   selector: 'facture-list-component',
   standalone: true,
-  imports: [DecimalPipe, NgFor, FormsModule, NgbTypeaheadModule, NgbPaginationModule, DatePipe, Ng2SearchPipeModule, MatInputModule, MatSelectModule, ReactiveFormsModule, MatButtonModule, MatIconModule],
+  imports: [DecimalPipe, NgFor, FormsModule, NgbTypeaheadModule, NgbPaginationModule, DatePipe, Ng2SearchPipeModule, MatInputModule, MatSelectModule, ReactiveFormsModule, MatButtonModule, MatIconModule, MatPaginatorModule],
   templateUrl: './facture-list.component.html',
   providers: [DecimalPipe, DatePipe],
   styleUrls: ['./facture-list.component.css']
 })
 export class FactureListComponent implements OnInit{
   page = 1;
-  pageSize = 4;
   sortOrderControl = new FormControl('');
   searchKey = new FormControl('')
   factures: Facture[] = [];
+  totalRecords: number = 0
+  pageIndex = 0
+  pageSize = 5
   constructor( private service: FactureService) {
   }
 
 
   ngOnInit() {
-    this.getApi('', '', '')
+    this.getApi('', '', '', this.pageSize, this.pageIndex)
     this.sortOrderControl.valueChanges.subscribe((value) => {
       if (value) {
         let sortResult = this.doSorting(value)
-        this.getApi(sortResult.sortColumn, sortResult.sortType, '')
+        this.pageIndex = 0
+        this.pageSize = 5
+        this.getApi(sortResult.sortColumn, sortResult.sortType, '', this.pageIndex, this.pageSize)
       }
       console.log(this.factures)
     });
@@ -75,19 +79,41 @@ export class FactureListComponent implements OnInit{
 
   searchByName() {
     let sortResult = this.doSorting(this.sortOrderControl.value ?? '');
+    this.pageIndex = 0
+    this.pageSize = 5
     this.getApi(
       sortResult.sortColumn,
       sortResult.sortType,
-      this.searchKey.value ?? ''
+      this.searchKey.value ?? '',
+      this.pageIndex,
+      this.pageSize
     );
   }
 
-  getApi(sortColumn: string, sortType: string, searchKey: string){
-    this.service.get(sortColumn, sortType, searchKey).subscribe(
+  getApi(sortColumn: string, sortType: string, searchKey: string, currentPage:number, pageSize:number){
+    this.service.get(sortColumn, sortType, searchKey, (currentPage + 1), pageSize).subscribe(
       response => {
-        this.factures = response
+        this.factures = response.body as unknown as Facture[]
+        console.log(this.factures)
+        this.totalRecords = response.headers.get('X-Total-Count')
+          ? Number(response.headers.get('X-Total-Count'))
+          : 0;
+        console.log(this.totalRecords);
       }
     )
+  }
+  handlePageEvent(e: PageEvent) {
+
+    this.pageIndex = e.pageIndex ;
+    this.pageSize = e.pageSize;
+    let sortResult = this.doSorting(this.sortOrderControl.value ?? '');
+    this.getApi(
+      sortResult.sortColumn,
+      sortResult.sortType,
+      this.searchKey.value ?? '',
+      this.pageIndex,
+      this.pageSize
+    );
   }
 
 
