@@ -16,18 +16,26 @@ logger = logging.getLogger('django')
 logger.info('here goes your message')
 
 
-class InternalListView(APIView):
+class InternalListView(generics.ListAPIView):
+    queryset = Internal.objects.all()
+    serializer_class = InternalSerializer
+    filter_backends = [filters.OrderingFilter, filters.SearchFilter]
+    ordering_fields = '__all__'
+    search_fields = [
+            'id',
+            'name',
+        ]
     pagination_class = StandardResultsSetPagination
 
     def get(self, request, *args, **kwargs):
         queryset = Internal.objects.all()
         paginator = self.pagination_class()
         result_page = paginator.paginate_queryset(queryset, request)
-        serializer = InternalSerializer(result_page, many=True)
-        return JsonResponse(serializer.data, safe=False)
+        return Response(self.list(result_page, *args, **kwargs).data['results'])
 
     def post(self, request, *args, **kwargs):
         data = JSONParser().parse(request)
+        print(data)
         if not data.get('quantity_after_percent'):
             data['quantity_after_percent'] = int(data['quantity']) * float(data['percent'])
         if not data.get('quantity'):
@@ -87,20 +95,20 @@ class InternalDetailListView(APIView):
         facture.delete()
         return HttpResponse(status=204)
 
-
-class InternalDetailFilterView(generics.ListAPIView):
-    queryset = Internal.objects.all()
-    serializer_class = InternalSerializer
-    filter_backends = [filters.OrderingFilter, filters.SearchFilter]
-    ordering_fields = '__all__'
-    search_fields = [
-            'id',
-            'name',
-        ]
-
-    def get(self, request, *args, **kwargs):
-        queryset = Internal.objects.all()
-        paginator = self.pagination_class()
-        result_page = paginator.paginate_queryset(queryset, request)
-        return Response(self.list(result_page, *args, **kwargs).data['results'])
-
+#
+# class InternalDetailFilterView(generics.ListAPIView):
+#     queryset = Internal.objects.all()
+#     serializer_class = InternalSerializer
+#     filter_backends = [filters.OrderingFilter, filters.SearchFilter]
+#     ordering_fields = '__all__'
+#     search_fields = [
+#             'id',
+#             'name',
+#         ]
+#
+#     def get(self, request, *args, **kwargs):
+#         queryset = Internal.objects.all()
+#         paginator = self.pagination_class()
+#         result_page = paginator.paginate_queryset(queryset, request)
+#         return Response(self.list(result_page, *args, **kwargs).data['results'])
+#
