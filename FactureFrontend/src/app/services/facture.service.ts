@@ -14,24 +14,21 @@ export class FactureService {
   constructor(private http: HttpClient) { }
 
   get(sortColumn: string, sortType: string, searchKey: string, currentPage: number,pageSize: number): Observable<HttpResponse<HttpResponse<any>>> {
-    let url = 'http://localhost:8000/api/facture'
+    let url = `http://localhost:8000/api/facture?p=${currentPage}&page_size=${pageSize}`
     if (sortColumn && sortType && searchKey){
-      url = `${url}/filters?search=${searchKey}&ordering=${sortColumn}?p=${currentPage}&page_size=${pageSize}`
+      url = `${url}&search=${searchKey}&ordering=${sortColumn}`
     }
-    else if(sortColumn && sortType){
-      url = `${url}/filters?ordering=${sortColumn}`
-    }
-    if (searchKey){
-      url = `${url}?p=${currentPage}&page_size=${pageSize}`
-      console.log(url)
+    if(sortColumn && sortType){
+      url = `${url}&ordering=${sortColumn}`
     }
     console.log(url)
 
     return this.http.get<HttpResponse<any>>(url, { observe: 'response' });
   }
 
-  create(data: any): Observable<any> {
-    return this.http.post(baseUrl, data);
+  post(data: any): Observable<HttpResponse<HttpResponse<any>>> {
+    const url = 'http://localhost:8000/api/facture'
+    return this.http.post<HttpResponse<any>>(url, data);
   }
 
   update(id: any, data: any): Observable<any> {

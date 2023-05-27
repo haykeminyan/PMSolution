@@ -1,10 +1,10 @@
 import {Input, Component, Injectable, OnInit, ViewChild, Output, EventEmitter, PipeTransform} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpResponse} from "@angular/common/http";
 import {FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AsyncPipe, DatePipe, DecimalPipe, NgFor, NgForOf} from "@angular/common";
 import {NgbPagination, NgbPaginationModule, NgbTypeaheadModule} from "@ng-bootstrap/ng-bootstrap";
 import {Ng2SearchPipeModule} from "ng2-search-filter";
-import {RouterOutlet} from "@angular/router";
+import {RouterLink, RouterOutlet} from "@angular/router";
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
@@ -22,7 +22,7 @@ import {MatSelectModule} from "@angular/material/select";
 @Component({
   selector: 'facture-list-component',
   standalone: true,
-  imports: [DecimalPipe, NgFor, FormsModule, NgbTypeaheadModule, NgbPaginationModule, DatePipe, Ng2SearchPipeModule, MatInputModule, MatSelectModule, ReactiveFormsModule, MatButtonModule, MatIconModule, MatPaginatorModule],
+  imports: [DecimalPipe, NgFor, FormsModule, NgbTypeaheadModule, NgbPaginationModule, DatePipe, Ng2SearchPipeModule, MatInputModule, MatSelectModule, ReactiveFormsModule, MatButtonModule, MatIconModule, MatPaginatorModule, RouterLink],
   templateUrl: './facture-list.component.html',
   providers: [DecimalPipe, DatePipe],
   styleUrls: ['./facture-list.component.css']
@@ -48,6 +48,7 @@ export class FactureListComponent implements OnInit{
         this.pageSize = 5
         this.getApi(sortResult.sortColumn, sortResult.sortType, '', this.pageIndex, this.pageSize)
       }
+      console.log('!!!')
       console.log(this.factures)
     });
 
@@ -94,11 +95,11 @@ export class FactureListComponent implements OnInit{
     this.service.get(sortColumn, sortType, searchKey, (currentPage + 1), pageSize).subscribe(
       response => {
         this.factures = response.body as unknown as Facture[]
+        console.log(response)
         console.log(this.factures)
-        this.totalRecords = response.headers.get('X-Total-Count')
-          ? Number(response.headers.get('X-Total-Count'))
+        this.totalRecords = response.headers.get('content-length')
+          ? Math.floor(Number(response.headers.get('content-length'))/this.pageSize)
           : 0;
-        console.log(this.totalRecords);
       }
     )
   }
@@ -106,6 +107,7 @@ export class FactureListComponent implements OnInit{
 
     this.pageIndex = e.pageIndex ;
     this.pageSize = e.pageSize;
+    console.log(this.pageIndex)
     let sortResult = this.doSorting(this.sortOrderControl.value ?? '');
     this.getApi(
       sortResult.sortColumn,

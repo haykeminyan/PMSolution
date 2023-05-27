@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FactureModel } from 'src/app/models/facture.model';
 import { FactureService } from 'src/app/services/facture.service';
+import {Facture} from "../../facture";
+import {AbstractControl, FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-add-tutorial',
@@ -8,25 +10,47 @@ import { FactureService } from 'src/app/services/facture.service';
   styleUrls: ['./add-facture.component.css']
 })
 export class AddFactureComponent implements OnInit {
+  form: FormGroup = new FormGroup({
+    name: new FormControl(''),
+    reference: new FormControl(''),
+    destination: new FormControl(''),
+    quantity: new FormControl(''),
+    created_date: new FormControl(''),
+    updated_date: new FormControl(''),
+    percent: new FormControl(''),
+    quantity_after_percent: new FormControl(''),
+    net_a_payer: new FormControl(''),
+    advance_payment: new FormControl(''),
+    total_payment: new FormControl(''),
+    total_tax: new FormControl(''),
+    total_payment_after_tax: new FormControl(''),
+  });
+  submitted = false
 
-  facture: FactureModel = {
-
-  };
-  submitted = false;
-
-  constructor(private factureService: FactureModel) { }
-
-  ngOnInit(): void {
+  constructor( private service: FactureService, private formBuilder: FormBuilder) {
   }
 
 
+  ngOnInit() {
+  }
+  get f(): { [key: string]: AbstractControl } {
+    return this.form.controls;
+  }
 
-  newTutorial(): void {
+  onSubmit(): void {
+    this.submitted = true;
+
+    if (this.form.invalid) {
+      return;
+    }
+    console.log(this.form.value)
+    this.service.post(this.form.value)
+    console.log(JSON.stringify(this.form.value, null, 2));
+  }
+
+  onReset(): void {
     this.submitted = false;
-    this.facture = {
-        id: '',
-        name: 'Test'
-    };
+    this.form.reset();
   }
 
 }

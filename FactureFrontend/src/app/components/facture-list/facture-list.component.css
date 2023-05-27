@@ -32,3 +32,6 @@ td {
 tr {
   min-width: 200%;
 }
+.example-form-field {
+  display: block ruby;
+}

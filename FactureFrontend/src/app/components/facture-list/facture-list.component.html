@@ -1,5 +1,8 @@
 <div style="margin: 15px">
   <div style="display: flex">
+    <a [routerLink]="['add']" [queryParams]="{debug: true}" queryParamsHandling="merge">
+      Create Facture
+    </a>
     <mat-form-field appearance="fill" class="example-form-field">
       <mat-label> -Sorting- </mat-label>
       <mat-select [formControl]="sortOrderControl">

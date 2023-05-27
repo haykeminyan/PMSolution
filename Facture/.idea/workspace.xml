@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d47d57ee-c2c6-46f9-93b5-a62f55d9663c" name="Changes" comment="version 0.3.2 small update in views.py">
+    <list default="true" id="d47d57ee-c2c6-46f9-93b5-a62f55d9663c" name="Changes" comment="version 0.8.3 small update (added pagination) need to fix on frontend part">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Facture/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Facture/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/pagination.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/pagination.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seller/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/seller/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +163,8 @@
       <workItem from="1684744563018" duration="662000" />
       <workItem from="1684779536372" duration="8450000" />
       <workItem from="1684827358544" duration="598000" />
-      <workItem from="1684871883697" duration="2673000" />
+      <workItem from="1684871883697" duration="3717000" />
+      <workItem from="1685092435344" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit (created database and connection with TablePlus)">
       <created>1666715570066</created>
@@ -280,7 +278,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684705465176</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="version 0.8.3 small update (added pagination) need to fix on frontend part">
+      <created>1684878465180</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684878465180</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +318,7 @@
     <MESSAGE value="version 0.3 rest part" />
     <MESSAGE value="version 0.3.1 add created_date and updated_date" />
     <MESSAGE value="version 0.3.2 small update in views.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 0.3.2 small update in views.py" />
+    <MESSAGE value="version 0.8.3 small update (added pagination) need to fix on frontend part" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 0.8.3 small update (added pagination) need to fix on frontend part" />
   </component>
 </project>
