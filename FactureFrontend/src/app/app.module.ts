@@ -20,7 +20,6 @@ import {MatSelectModule} from "@angular/material/select";
   declarations: [
     AppComponent,
     AddFactureComponent,
-    FactureDetailsComponent,
     FactureComponent,
     SearchFilterPipe
   ],

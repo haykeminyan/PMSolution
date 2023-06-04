@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FactureModel } from 'src/app/models/facture.model';
 import { FactureService } from 'src/app/services/facture.service';
 import {Facture} from "../../facture";
-import {AbstractControl, FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-add-tutorial',
@@ -10,8 +10,9 @@ import {AbstractControl, FormBuilder, FormControl, FormGroup} from "@angular/for
   styleUrls: ['./add-facture.component.css']
 })
 export class AddFactureComponent implements OnInit {
+  factures: Facture[] = [];
   form: FormGroup = new FormGroup({
-    name: new FormControl(''),
+    name: new FormControl('', Validators.required),
     reference: new FormControl(''),
     destination: new FormControl(''),
     quantity: new FormControl(''),
@@ -44,7 +45,7 @@ export class AddFactureComponent implements OnInit {
       return;
     }
     console.log(this.form.value)
-    this.service.post(this.form.value)
+    this.service.post(this.form.value).subscribe(()=>{this.factures.push(this.form.value)})
     console.log(JSON.stringify(this.form.value, null, 2));
   }
 

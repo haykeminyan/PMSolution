@@ -1,7 +1,7 @@
 <div class="register-form">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label>Full Name</label>
+      <label>Name</label>
       <input
         type="text"
         formControlName="name"
@@ -13,96 +13,201 @@
       </div>
     </div>
 
+
     <div class="form-group">
-      <label>Username</label>
+      <label>Reference</label>
       <input
         type="text"
-        formControlName="username"
+        formControlName="reference"
         class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+        [ngClass]="{ 'is-invalid': submitted && f['reference'].errors }"
       />
-      <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
-        <div *ngIf="f['username'].errors['required']">Username is required</div>
-        <div *ngIf="f['username'].errors['minlength']">
-          Username must be at least 6 characters
+      <div *ngIf="submitted && f['reference'].errors" class="invalid-feedback">
+        <div *ngIf="f['reference'].errors['required']">Username is required</div>
+        <div *ngIf="f['reference'].errors['minlength']">
+          Reference
         </div>
-        <div *ngIf="f['username'].errors['maxlength']">
+        <div *ngIf="f['reference'].errors['maxlength']">
           Username must not exceed 20 characters
         </div>
       </div>
     </div>
 
     <div class="form-group">
-      <label>Email</label>
+      <label>Destination</label>
       <input
         type="text"
-        formControlName="email"
+        formControlName="destination"
         class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+        [ngClass]="{ 'is-invalid': submitted && f['destination'].errors }"
       />
-      <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
-        <div *ngIf="f['email'].errors['required']">Email is required</div>
-        <div *ngIf="f['email'].errors['email']">Email is invalid</div>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label>Password</label>
-      <input
-        type="password"
-        formControlName="password"
-        class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
-      />
-      <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-        <div *ngIf="f['password'].errors['required']">Password is required</div>
-        <div *ngIf="f['password'].errors['minlength']">
-          Password must be at least 6 characters
+      <div *ngIf="submitted && f['destination'].errors" class="invalid-feedback">
+        <div *ngIf="f['destination'].errors['required']">Username is required</div>
+        <div *ngIf="f['destination'].errors['minlength']">
+          Destination
         </div>
-        <div *ngIf="f['password'].errors['maxlength']">
-          Username must not exceed 40 characters
+        <div *ngIf="f['destination'].errors['maxlength']">
+          Username must not exceed 20 characters
         </div>
       </div>
     </div>
 
     <div class="form-group">
-      <label>Confirm Password</label>
+      <label>Quantity</label>
       <input
-        type="password"
-        formControlName="confirmPassword"
+        type="number"
+        formControlName="quantity"
         class="form-control"
-        [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }"
+        [ngClass]="{ 'is-invalid': submitted && f['quantity'].errors }"
       />
-      <div
-        *ngIf="submitted && f['confirmPassword'].errors"
-        class="invalid-feedback"
-      >
-        <div *ngIf="f['confirmPassword'].errors['required']">
-          Confirm Password is required
+      <div *ngIf="submitted && f['quantity'].errors" class="invalid-feedback">
+        <div *ngIf="f['quantity'].errors['required']">Username is required</div>
+        <div *ngIf="f['quantity'].errors['minlength']">
+          Quantity
         </div>
-        <div *ngIf="f['confirmPassword'].errors['matching']">
-          Confirm Password does not match
+        <div *ngIf="f['quantity'].errors['maxlength']">
+          Username must not exceed 20 characters
         </div>
-      </div>
-    </div>
-
-    <div class="form-group form-check">
-      <input
-        type="checkbox"
-        formControlName="acceptTerms"
-        class="form-check-input"
-        [ngClass]="{ 'is-invalid': submitted && f['acceptTerms'].errors }"
-      />
-      <label for="acceptTerms" class="form-check-label"
-      >I have read and agree to the Terms</label
-      >
-      <div *ngIf="submitted && f['acceptTerms'].errors" class="invalid-feedback">
-        Accept Terms is required
       </div>
     </div>
 
     <div class="form-group">
-      <button type="submit" class="btn btn-primary">Register</button>
+      <label>Percent</label>
+      <input
+        type="number"
+        formControlName="percent"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['percent'].errors }"
+      />
+      <div *ngIf="submitted && f['percent'].errors" class="invalid-feedback">
+        <div *ngIf="f['percent'].errors['required']">Username is required</div>
+        <div *ngIf="f['percent'].errors['minlength']">
+          Percent
+        </div>
+        <div *ngIf="f['percent'].errors['maxlength']">
+          Username must not exceed 20 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Quantity after percent</label>
+      <input
+        type="number"
+        formControlName="quantity_after_percent"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['quantity_after_percent'].errors }"
+      />
+      <div *ngIf="submitted && f['quantity_after_percent'].errors" class="invalid-feedback">
+        <div *ngIf="f['quantity_after_percent']">Username is required</div>
+        <div *ngIf="f['quantity_after_percent']">
+          Quantity after percent
+        </div>
+        <div *ngIf="f['quantity_after_percent']">
+          Username must not exceed 20 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Net a payer</label>
+      <input
+        type="number"
+        formControlName="net_a_payer"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['quantity_after_percent'].errors }"
+      />
+      <div *ngIf="submitted && f['net_a_payer'].errors" class="invalid-feedback">
+        <div *ngIf="f['net_a_payer']">Username is required</div>
+        <div *ngIf="f['net_a_payer']">
+          Quantity after percent
+        </div>
+        <div *ngIf="f['net_a_payer']">
+          Username must not exceed 20 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Advance payment</label>
+      <input
+        type="text"
+        formControlName="advance_payment"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['advance_payment'].errors }"
+      />
+      <div *ngIf="submitted && f['advance_payment'].errors" class="invalid-feedback">
+        <div *ngIf="f['advance_payment']">Username is required</div>
+        <div *ngIf="f['advance_payment']">
+          Quantity after percent
+        </div>
+        <div *ngIf="f['advance_payment']">
+          Username must not exceed 20 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Total payment</label>
+      <input
+        type="number"
+        formControlName="total_payment"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['total_payment'].errors }"
+      />
+      <div *ngIf="submitted && f['total_payment'].errors" class="invalid-feedback">
+        <div *ngIf="f['total_payment']">Username is required</div>
+        <div *ngIf="f['total_payment']">
+          Quantity after percent
+        </div>
+        <div *ngIf="f['total_payment']">
+          Username must not exceed 20 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Total tax</label>
+      <input
+        type="number"
+        formControlName="total_tax"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['total_tax'].errors }"
+      />
+      <div *ngIf="submitted && f['total_tax'].errors" class="invalid-feedback">
+        <div *ngIf="f['total_tax']">Username is required</div>
+        <div *ngIf="f['total_tax']">
+          Quantity after percent
+        </div>
+        <div *ngIf="f['total_tax']">
+          Username must not exceed 20 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Total payment after tax</label>
+      <input
+        type="number"
+        formControlName="total_payment_after_tax"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['total_payment_after_tax'].errors }"
+      />
+      <div *ngIf="submitted && f['total_payment_after_tax'].errors" class="invalid-feedback">
+        <div *ngIf="f['total_payment_after_tax']">Username is required</div>
+        <div *ngIf="f['total_payment_after_tax']">
+          Quantity after percent
+        </div>
+        <div *ngIf="f['total_payment_after_tax']">
+          Username must not exceed 20 characters
+        </div>
+      </div>
+    </div>
+
+    <br/>
+    {{form.invalid}}
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Register</button>
       <button
         type="button"
         (click)="onReset()"

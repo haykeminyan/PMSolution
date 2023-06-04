@@ -2,7 +2,7 @@ export interface Facture {
   id?: string
   name?: string
   created_date?: string
-  address: string
+  address?: string
   updated_date?: string
   reference?: string
   destination?: string

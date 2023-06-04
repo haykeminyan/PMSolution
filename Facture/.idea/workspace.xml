@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d47d57ee-c2c6-46f9-93b5-a62f55d9663c" name="Changes" comment="version 0.8.3 small update (added pagination) need to fix on frontend part">
+    <list default="true" id="d47d57ee-c2c6-46f9-93b5-a62f55d9663c" name="Changes" comment="version 0.9 refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/components/add-facture/add-facture.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/add-facture/add-facture.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/components/add-facture/add-facture.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/add-facture/add-facture.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/components/facture-list/facture-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/facture.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/facture.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/facture/facture.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/facture/facture.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/facture/facture.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/facture/facture.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../FactureFrontend/src/app/services/facture.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../FactureFrontend/src/app/services/facture.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +175,11 @@
       <workItem from="1684827358544" duration="598000" />
       <workItem from="1684871883697" duration="3717000" />
       <workItem from="1685092435344" duration="11000" />
+      <workItem from="1685213655617" duration="4796000" />
+      <workItem from="1685346986565" duration="14000" />
+      <workItem from="1685702755473" duration="3853000" />
+      <workItem from="1685712207404" duration="1373000" />
+      <workItem from="1685819724373" duration="999000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit (created database and connection with TablePlus)">
       <created>1666715570066</created>
@@ -285,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684878465180</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="version 0.9 refactoring">
+      <created>1685228954913</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1685228954913</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,6 +341,7 @@
     <MESSAGE value="version 0.3.1 add created_date and updated_date" />
     <MESSAGE value="version 0.3.2 small update in views.py" />
     <MESSAGE value="version 0.8.3 small update (added pagination) need to fix on frontend part" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 0.8.3 small update (added pagination) need to fix on frontend part" />
+    <MESSAGE value="version 0.9 refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 0.9 refactoring" />
   </component>
 </project>

@@ -1,4 +1,14 @@
-import {Input, Component, Injectable, OnInit, ViewChild, Output, EventEmitter, PipeTransform} from '@angular/core';
+import {
+  Input,
+  Component,
+  Injectable,
+  OnInit,
+  ViewChild,
+  Output,
+  EventEmitter,
+  PipeTransform,
+  AfterViewInit
+} from '@angular/core';
 import {HttpClient, HttpResponse} from "@angular/common/http";
 import {FormControl, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AsyncPipe, DatePipe, DecimalPipe, NgFor, NgForOf} from "@angular/common";
@@ -116,6 +126,13 @@ export class FactureListComponent implements OnInit{
       this.pageIndex,
       this.pageSize
     );
+  }
+
+
+  deleteFacture(id: any) {
+    this.service.delete(id).subscribe(()=>{
+      this.factures = this.factures.filter((value) => value.id !== id);
+    })
   }
 
 

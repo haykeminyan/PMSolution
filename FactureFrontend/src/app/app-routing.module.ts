@@ -7,7 +7,9 @@ import {FactureListComponent} from "./components/facture-list/facture-list.compo
 
 const routes: Routes = [
   { path: '', component: FactureListComponent},
-  { path: 'add', component: AddFactureComponent }
+  { path: 'add', component: AddFactureComponent },
+  {path: 'details', component: FactureDetailsComponent},
+  // {path: 'edit', component: FactureDetailsComponent},
 ];
 
 @NgModule({

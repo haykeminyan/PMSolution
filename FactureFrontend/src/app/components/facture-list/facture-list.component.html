@@ -74,8 +74,15 @@
     <td>{{ facture.total_payment }}</td>
     <td>{{ facture.total_tax }}</td>
     <td>{{ facture.total_payment_after_tax }}</td>
+<!--    <a [routerLink]="['add']" [queryParams]="{debug: true}" queryParamsHandling="merge">-->
+<!--      Create Facture-->
+<!--    </a>-->
+    <button color="primary" [routerLink]="['details']" [queryParams]="{id:facture.id}" class="btn btn-primary">view</button>
+    <button color="primary" type="submit" class="btn btn-primary" (click)="deleteFacture(facture.id)">delete</button>
+
   </tr>
   </tbody>
+
 </table>
 
 </div>
